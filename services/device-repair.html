@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta name="theme-color" content="#080808"/>
+<title>Device Repair &amp; Diagnostics – PCAID Graz</title>
+<meta name="description" content="Component-level laptop and PC repair in Graz. Full diagnostics, screen replacement, battery, data recovery, OS setup. WKO-registered. Fast turnaround."/>
+<meta name="keywords" content="PC Reparatur Graz, Laptop Reparatur Graz, Hardware Diagnose, Datenrettung Graz, Screen Replacement Graz, PCAID"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<style>
+  :root { --lime: #AAFF2A; --black: #080808; --dark: #111111; --card: #161616; --border: #222222; --white: #F5F5F5; --muted: #888; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+  body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; opacity: 0.4; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 2.5rem; background: rgba(8,8,8,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+  .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+  .nav-logo img { height: 56px; width: auto; display: block; mix-blend-mode: screen; }
+  .nav-logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.1em; color: var(--lime); display: none; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--lime); }
+  .nav-cta { background: var(--lime) !important; color: var(--black) !important; padding: 0.5rem 1.2rem; border-radius: 4px; font-weight: 700 !important; }
+  .nav-cta:hover { background: #c8ff4d !important; color: var(--black) !important; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--lime); transition: all 0.3s; }
+
+  /* BREADCRUMB */
+  .breadcrumb { position: relative; z-index: 1; padding: 6.5rem 2.5rem 0; max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; color: var(--muted); }
+  .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .breadcrumb a:hover { color: var(--lime); }
+  .breadcrumb span { color: var(--lime); }
+
+  /* HERO */
+  .svc-hero { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 2.5rem 2.5rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .svc-hero-grid-bg { position: absolute; inset: 0; z-index: 0; background-image: linear-gradient(rgba(170,255,42,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(170,255,42,0.03) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
+  .svc-hero-glow { position: fixed; width: 700px; height: 700px; background: radial-gradient(circle, rgba(170,255,42,0.08) 0%, transparent 70%); top: -150px; right: -150px; pointer-events: none; z-index: 0; }
+  .svc-hero-content { position: relative; z-index: 1; }
+  .svc-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--lime); margin-bottom: 0.8rem; }
+  .svc-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.8rem, 6vw, 4.5rem); line-height: 0.95; letter-spacing: 0.02em; color: var(--white); margin-bottom: 1.2rem; }
+  .svc-intro { font-size: 1.05rem; color: var(--muted); line-height: 1.75; max-width: 480px; margin-bottom: 2rem; }
+  .svc-intro strong { color: var(--white); }
+  .svc-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary { background: var(--lime); color: var(--black); padding: 0.85rem 2rem; border-radius: 4px; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; transition: background 0.2s, transform 0.15s; display: inline-block; }
+  .btn-primary:hover { background: #c8ff4d; transform: translateY(-2px); }
+  .btn-outline { border: 1px solid var(--border); color: var(--white); padding: 0.85rem 2rem; border-radius: 4px; font-weight: 500; font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; transition: border-color 0.2s, color 0.2s, transform 0.15s; display: inline-block; }
+  .btn-outline:hover { border-color: var(--lime); color: var(--lime); transform: translateY(-2px); }
+
+  /* HERO PANEL */
+  .svc-hero-visual { position: relative; z-index: 1; background: var(--card); border: 1px solid var(--border); padding: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+  .svc-stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); }
+  .svc-stat { background: var(--dark); padding: 1.2rem 1rem; }
+  .svc-stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: var(--lime); line-height: 1; }
+  .svc-stat-lbl { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.2rem; }
+  .svc-includes { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .svc-includes li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.85rem; color: var(--muted); }
+  .svc-includes li::before { content: '✓'; color: var(--lime); font-weight: 700; flex-shrink: 0; }
+  .panel-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--lime); margin-bottom: 0.8rem; }
+
+  /* LAYOUT */
+  .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 0 2.5rem; }
+  .content-section { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 5rem 2.5rem; }
+  .section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--lime); margin-bottom: 0.8rem; }
+  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1; letter-spacing: 0.02em; color: var(--white); margin-bottom: 1rem; }
+  .section-desc { color: var(--muted); max-width: 540px; font-size: 1rem; line-height: 1.7; margin-bottom: 3rem; }
+
+  /* DETAIL GRID */
+  .detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .detail-card { background: var(--card); padding: 2rem 1.8rem; position: relative; overflow: hidden; transition: background 0.25s; }
+  .detail-card::after { content: ''; position: absolute; bottom: 0; left: 0; height: 2px; width: 0; background: var(--lime); transition: width 0.35s ease; }
+  .detail-card:hover { background: #1a1a1a; }
+  .detail-card:hover::after { width: 100%; }
+  .detail-icon { width: 40px; height: 40px; border: 1px solid rgba(170,255,42,0.3); border-radius: 7px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; color: var(--lime); }
+  .detail-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 0.05em; color: var(--white); margin-bottom: 0.5rem; }
+  .detail-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+
+  /* GALLERY */
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  .gallery-item { background: var(--card); border: 1px solid var(--border); aspect-ratio: 4/3; overflow: hidden; position: relative; cursor: pointer; }
+  .gallery-item.wide { grid-column: span 2; }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; display: block; }
+  .gallery-item:hover img { transform: scale(1.05); }
+  .gallery-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); opacity: 0; transition: opacity 0.3s; display: flex; align-items: flex-end; padding: 1rem; }
+  .gallery-item:hover .gallery-overlay { opacity: 1; }
+  .gallery-overlay span { font-size: 0.78rem; color: var(--lime); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* FOR GRID */
+  .for-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .for-card { background: var(--card); border: 1px solid var(--border); padding: 1.5rem; display: flex; align-items: flex-start; gap: 0.8rem; }
+  .for-card-icon { color: var(--lime); flex-shrink: 0; margin-top: 2px; }
+  .for-card-title { font-weight: 600; font-size: 0.9rem; color: var(--white); margin-bottom: 0.25rem; }
+  .for-card-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
+
+  /* OUTPUT BOX */
+  .output-box { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--lime); padding: 2rem 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .output-col-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--lime); margin-bottom: 1rem; }
+  .output-list { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+  .output-list li { font-size: 0.88rem; color: var(--muted); display: flex; gap: 0.6rem; align-items: flex-start; }
+  .output-list li::before { content: '→'; color: var(--lime); flex-shrink: 0; }
+
+  /* CTA */
+  .cta-section { position: relative; z-index: 1; background: var(--dark); border-top: 1px solid var(--border); padding: 5rem 2.5rem; text-align: center; }
+  .cta-inner { max-width: 600px; margin: 0 auto; }
+  .cta-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1; color: var(--white); margin-bottom: 1rem; }
+  .cta-title .accent { color: var(--lime); }
+  .cta-desc { color: var(--muted); font-size: 1rem; line-height: 1.7; margin-bottom: 2.5rem; }
+  .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  /* LIGHTBOX */
+  .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.93); z-index: 200; align-items: center; justify-content: center; padding: 2rem; }
+  .lightbox.open { display: flex; }
+  .lightbox-img { max-width: 90vw; max-height: 85vh; object-fit: contain; border: 1px solid var(--border); }
+  .lightbox-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: 1px solid var(--border); color: var(--white); width: 40px; height: 40px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s, color 0.2s; }
+  .lightbox-close:hover { border-color: var(--lime); color: var(--lime); }
+
+  /* FOOTER */
+  footer { background: var(--black); border-top: 1px solid var(--border); padding: 2rem 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; position: relative; z-index: 1; }
+  .footer-logo { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+  .footer-logo span { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 0.1em; color: var(--lime); }
+  .footer-copy { font-size: 0.75rem; color: var(--muted); text-align: center; }
+  .footer-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+  .footer-links a { font-size: 0.75rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--lime); }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    nav { padding: 0.875rem 1.25rem; }
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(8,8,8,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 1.25rem 1.5rem 1.75rem; gap: 0; }
+    .nav-links.open { display: flex; }
+    .nav-links li { border-bottom: 1px solid var(--border); }
+    .nav-links li:last-child { border-bottom: none; margin-top: 0.75rem; }
+    .nav-links a { display: block; padding: 0.875rem 0; font-size: 0.9rem; }
+    .nav-cta { display: block !important; text-align: center; padding: 0.75rem 1rem !important; }
+    .hamburger { display: flex; }
+    .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .breadcrumb { padding: 5.5rem 1.25rem 0; }
+    .svc-hero { grid-template-columns: 1fr; gap: 2.5rem; padding: 2rem 1.25rem 3.5rem; }
+    .content-section { padding: 3.5rem 1.25rem; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-item.wide { grid-column: span 2; }
+    .output-box { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem; }
+    .cta-section { padding: 3.5rem 1.25rem; }
+    footer { flex-direction: column; align-items: center; text-align: center; padding: 1.75rem 1.25rem; gap: 1.25rem; }
+    .footer-links { gap: 1.25rem; flex-wrap: wrap; justify-content: center; }
+    .lightbox { padding: 1rem; }
+    .lightbox-close { top: 0.75rem; right: 0.75rem; width: 44px; height: 44px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <img src="../PICTURES/HERO.png" alt="PCAID" onerror="this.style.display='none';document.querySelector('.nav-logo-text').style.display='block'"/>
+    <span class="nav-logo-text">PCAID</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html#services">Services</a></li>
+    <li><a href="../index.html#about-section">About</a></li>
+    <li><a href="../index.html#testimonials">Reviews</a></li>
+    <li><a href="../index.html#contact-section" class="nav-cta">Get Help</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="breadcrumb">
+  <a href="../index.html">Home</a>&nbsp;/&nbsp;<a href="../index.html#services">Services</a>&nbsp;/&nbsp;<span>Device Repair &amp; Diagnostics</span>
+</div>
+
+<div style="position:relative; overflow:hidden;">
+  <div class="svc-hero-grid-bg"></div>
+  <div class="svc-hero-glow"></div>
+  <div class="svc-hero">
+    <div class="svc-hero-content">
+      <div class="svc-label">Device Repair &amp; Diagnostics</div>
+      <h1 class="svc-title">We Fix What<br/>Others Give Up On</h1>
+      <p class="svc-intro">
+        Component-level hardware repair for laptops and PCs. We identify the <strong>exact fault</strong> before touching a single part - then fix it fast, honestly and to a standard that lasts.
+      </p>
+      <div class="svc-actions">
+        <a href="../index.html#contact-section" class="btn-primary">Book a Repair</a>
+        <a href="https://wa.me/4368864834687" target="_blank" rel="noopener" class="btn-outline">WhatsApp Us</a>
+      </div>
+    </div>
+    <div class="svc-hero-visual">
+      <div class="panel-label">At a Glance</div>
+      <div class="svc-stat-row">
+        <div class="svc-stat"><div class="svc-stat-num">7+</div><div class="svc-stat-lbl">Years Experience</div></div>
+        <div class="svc-stat"><div class="svc-stat-num">24h</div><div class="svc-stat-lbl">Typical Turnaround</div></div>
+        <div class="svc-stat"><div class="svc-stat-num">100%</div><div class="svc-stat-lbl">Honest Diagnostics</div></div>
+        <div class="svc-stat"><div class="svc-stat-num">WKO</div><div class="svc-stat-lbl">Registered</div></div>
+      </div>
+      <div class="panel-label" style="margin-top:0.5rem;">What's Covered</div>
+      <ul class="svc-includes">
+        <li>Full hardware diagnostics - motherboard, CPU, RAM, power</li>
+        <li>Screen &amp; display replacement (all laptop brands)</li>
+        <li>Battery, keyboard &amp; charging port repair</li>
+        <li>RAM and SSD/HDD upgrades</li>
+        <li>Data recovery from failed drives</li>
+        <li>Windows, macOS &amp; Linux installation and setup</li>
+        <li>Virus removal and performance tuning</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- WHAT WE FIX -->
+<div class="content-section">
+  <div class="reveal">
+    <div class="section-label">The Work</div>
+    <h2 class="section-title">What We Fix</h2>
+    <p class="section-desc">Every job starts with a full diagnostic - no guessing, no unnecessary parts. We tell you exactly what's wrong before any work begins.</p>
+  </div>
+  <div class="detail-grid reveal">
+    <div class="detail-card">
+      <div class="detail-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+      <div class="detail-title">Full Hardware Diagnostics</div>
+      <p class="detail-desc">Systematic board-level testing of motherboard, CPU, RAM, GPU, power circuitry and thermal systems. We isolate faults precisely - no parts replaced unnecessarily.</p>
+    </div>
+    <div class="detail-card">
+      <div class="detail-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg></div>
+      <div class="detail-title">Screen Replacement</div>
+      <p class="detail-desc">Cracked, dead, flickering, or backlight-failed displays replaced across all major laptop brands. Original-spec panels sourced for like-for-like quality.</p>
+    </div>
+    <div class="detail-card">
+      <div class="detail-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="6" width="18" height="12" rx="2"/><path d="M23 13v-2"/></svg></div>
+      <div class="detail-title">Battery &amp; Charging Port</div>
+      <p class="detail-desc">Battery not holding charge, or charging port damaged? We replace both with quality parts and test under load before return.</p>
+    </div>
+    <div class="detail-card">
+      <div class="detail-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+      <div class="detail-title">RAM &amp; Storage Upgrades</div>
+      <p class="detail-desc">Slow machine? Upgrade RAM or replace your spinning hard drive with a fast SSD. Significant performance improvements for most laptops over 3 years old.</p>
+    </div>
+    <div class="detail-card">
+      <div class="detail-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+      <div class="detail-title">Data Recovery</div>
+      <p class="detail-desc">Files lost to drive failure, accidental formatting, or OS corruption recovered wherever technically possible. We handle cases others turn away.</p>
+    </div>
+    <div class="detail-card">
+      <div class="detail-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg></div>
+      <div class="detail-title">OS &amp; Software Setup</div>
+      <p class="detail-desc">Windows, Linux and macOS installation, driver setup, security configuration and performance tuning. Clean installs or in-place recovery - your choice.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- DONE DEALS GALLERY -->
+<div class="content-section">
+  <div class="reveal">
+    <div class="section-label">Done Deals</div>
+    <h2 class="section-title">Real Repairs, Real Results</h2>
+    <p class="section-desc">Photos from actual jobs completed in Graz. Every image is a device that came in broken and left working.</p>
+  </div>
+  <div class="gallery-grid reveal">
+    <div class="gallery-item">
+      <img src="../PICTURES/motherboard.jpg" alt="Computer Repair" loading="lazy"/>
+      <div class="gallery-overlay"><span>Computer Repair</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="../PICTURES/screen_replacement.jpg" alt="Screen Replacement" loading="lazy"/>
+      <div class="gallery-overlay"><span>Screen Replacement</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="../PICTURES/Data_recovery.jpg" alt="Data Recovery" loading="lazy"/>
+      <div class="gallery-overlay"><span>Data Recovery</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="../PICTURES/Software___OS_Setup.jpg" alt="Software &amp; OS Setup" loading="lazy"/>
+      <div class="gallery-overlay"><span>Software &amp; OS Setup</span></div>
+    </div>
+    <div class="gallery-item">
+      <img src="../PICTURES/Battery_replacement.jpg" alt="Battery Replacement" loading="lazy"/>
+      <div class="gallery-overlay"><span>Battery Replacement</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- WHO IT'S FOR -->
+<div class="content-section">
+  <div class="reveal">
+    <div class="section-label">Who It's For</div>
+    <h2 class="section-title">This Service Is Right For You If...</h2>
+  </div>
+  <div class="for-grid reveal">
+    <div class="for-card">
+      <div class="for-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+      <div><div class="for-card-title">Students</div><div class="for-card-desc">Laptop died before an exam or submission deadline. Fast same-day repair where possible.</div></div>
+    </div>
+    <div class="for-card">
+      <div class="for-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+      <div><div class="for-card-title">Freelancers &amp; Home Workers</div><div class="for-card-desc">Your machine is your income. We prioritise fast, reliable repair so you're not offline for long.</div></div>
+    </div>
+    <div class="for-card">
+      <div class="for-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div><div class="for-card-title">Small Businesses</div><div class="for-card-desc">Staff machine down? Multiple devices needing an OS refresh or upgrade? We handle small business fleets too.</div></div>
+    </div>
+    <div class="for-card">
+      <div class="for-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+      <div><div class="for-card-title">Anyone in Graz (or beyond)</div><div class="for-card-desc">Based in Graz but clients ship devices from Vienna and other cities. Distance is not a barrier.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- WHAT YOU GET -->
+<div class="content-section">
+  <div class="reveal">
+    <div class="section-label">The Output</div>
+    <h2 class="section-title">What You Get Back</h2>
+    <p class="section-desc">Every repair is returned with a clear record of what was found and what was done - no surprises on the invoice.</p>
+  </div>
+  <div class="output-box reveal">
+    <div>
+      <div class="output-col-label">You Receive</div>
+      <ul class="output-list">
+        <li>A fully repaired, tested device</li>
+        <li>Verbal or written diagnostic summary</li>
+        <li>Parts used and work carried out documented</li>
+        <li>Post-repair functionality check in front of you</li>
+        <li>Honest advice on device lifespan and future risks</li>
+      </ul>
+    </div>
+    <div>
+      <div class="output-col-label">Our Commitment</div>
+      <ul class="output-list">
+        <li>No repair started without your approval of the diagnosis</li>
+        <li>No unnecessary parts replaced</li>
+        <li>Same-day turnaround where technically possible</li>
+        <li>Data handled with confidentiality and care</li>
+        <li>Transparent, flat-rate or quoted pricing upfront</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-inner reveal">
+    <div class="svc-label">Ready to Start?</div>
+    <h2 class="cta-title">Get Your Device<br/><span class="accent">Fixed Today</span></h2>
+    <p class="cta-desc">Bring it in, ship it to us, or send a WhatsApp message with a description of the issue. We'll respond fast.</p>
+    <div class="cta-actions">
+      <a href="../index.html#contact-section" class="btn-primary">Book a Repair</a>
+      <a href="https://wa.me/4368864834687" target="_blank" rel="noopener" class="btn-outline">Chat on WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <a class="footer-logo" href="../index.html">
+    <svg width="24" height="24" viewBox="0 0 40 40" fill="none"><path d="M10 6 C10 6 10 34 10 34 L18 34 L18 24 C18 24 28 24 28 15 C28 6 18 6 10 6 Z M18 8 C18 8 24 8 24 15 C24 22 18 22 18 22 L18 8Z" fill="#AAFF2A"/><circle cx="30" cy="28" r="2.5" fill="white"/></svg>
+    <span>PCAID</span>
+  </a>
+  <p class="footer-copy">© 2025 PCAID · Dienstleistungen in der automatischen Datenverarbeitung und Informationstechnik · WKO Graz</p>
+  <ul class="footer-links">
+    <li><a href="../index.html#services">All Services</a></li>
+    <li><a href="data-services.html">Data Services</a></li>
+    <li><a href="web-development.html">Web Dev</a></li>
+    <li><a href="../index.html#contact-section">Contact</a></li>
+  </ul>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">✕</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt=""/>
+</div>
+
+<script>
+  // Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => { navLinks.classList.toggle('open'); hamburger.classList.toggle('active'); });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { navLinks.classList.remove('open'); hamburger.classList.remove('active'); }));
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.08 });
+  reveals.forEach(r => observer.observe(r));
+
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const img = item.querySelector('img');
+      if (img) { lightboxImg.src = img.src; lightbox.classList.add('open'); }
+    });
+  });
+  document.getElementById('lightboxClose').addEventListener('click', () => lightbox.classList.remove('open'));
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.classList.remove('open'); });
+</script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<meta name="theme-color" content="#080808"/>
+<title>Video Subtitling &amp; Captioning – PCAID Graz</title>
+<meta name="description" content="Professional subtitles and captions for videos in 90+ languages. SRT, VTT and burned-in formats. YouTube, corporate and multilingual subtitling. Remote delivery. WKO-registered."/>
+<meta name="keywords" content="Video Untertitel Graz, Subtitling Austria, Captions Video, SRT VTT Graz, Multilingual Subtitles, Untertitelung Graz, PCAID"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<style>
+  :root { --lime: #AAFF2A; --lime-dim: #7DC41A; --black: #080808; --dark: #111111; --card: #161616; --border: #222222; --white: #F5F5F5; --muted: #888; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--black); color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+  body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; opacity: 0.4; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 2.5rem; background: rgba(8,8,8,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+  .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+  .nav-logo img { height: 56px; width: auto; display: block; mix-blend-mode: screen; }
+  .nav-logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.1em; color: var(--lime); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--lime); }
+  .nav-cta { background: var(--lime); color: var(--black) !important; padding: 0.5rem 1.2rem; border-radius: 4px; font-weight: 700 !important; }
+  .nav-cta:hover { background: #c8ff4d !important; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--lime); transition: all 0.3s; }
+  .breadcrumb { position: relative; z-index: 1; padding: 6.5rem 2.5rem 0; max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; color: var(--muted); }
+  .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .breadcrumb a:hover { color: var(--lime); }
+  .breadcrumb span { color: var(--lime); }
+  .svc-hero { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 2.5rem 2.5rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .svc-hero-grid-bg { position: absolute; inset: 0; z-index: 0; background-image: linear-gradient(rgba(170,255,42,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(170,255,42,0.03) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; }
+  .svc-hero-glow { position: fixed; width: 700px; height: 700px; background: radial-gradient(circle, rgba(170,255,42,0.08) 0%, transparent 70%); top: -150px; right: -150px; pointer-events: none; z-index: 0; }
+  .svc-hero-content { position: relative; z-index: 1; }
+  .svc-number { font-family: 'Bebas Neue', sans-serif; font-size: 8rem; color: rgba(170,255,42,0.06); line-height: 1; position: absolute; top: -2rem; left: -1rem; pointer-events: none; user-select: none; }
+  .svc-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--lime); margin-bottom: 0.8rem; }
+  .svc-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.8rem, 6vw, 4.5rem); line-height: 0.95; letter-spacing: 0.02em; color: var(--white); margin-bottom: 1.2rem; }
+  .svc-intro { font-size: 1.05rem; color: var(--muted); line-height: 1.75; max-width: 480px; margin-bottom: 2rem; }
+  .svc-intro strong { color: var(--white); }
+  .btn-primary { background: var(--lime); color: var(--black); padding: 0.85rem 2rem; border-radius: 4px; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; transition: background 0.2s, transform 0.15s; display: inline-block; }
+  .btn-primary:hover { background: #c8ff4d; transform: translateY(-2px); }
+  .btn-outline { border: 1px solid var(--border); color: var(--white); padding: 0.85rem 2rem; border-radius: 4px; font-weight: 500; font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; transition: border-color 0.2s, color 0.2s, transform 0.15s; display: inline-block; }
+  .btn-outline:hover { border-color: var(--lime); color: var(--lime); transform: translateY(-2px); }
+  .svc-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .svc-hero-visual { position: relative; z-index: 1; background: var(--card); border: 1px solid var(--border); padding: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+  .svc-stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); }
+  .svc-stat { background: var(--dark); padding: 1.2rem 1rem; }
+  .svc-stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: var(--lime); line-height: 1; }
+  .svc-stat-lbl { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.2rem; }
+  .svc-includes { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .svc-includes li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.85rem; color: var(--muted); }
+  .svc-includes li::before { content: '✓'; color: var(--lime); font-weight: 700; flex-shrink: 0; }
+  .panel-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--lime); margin-bottom: 0.8rem; }
+  .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 0 2.5rem; }
+  .content-section { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 5rem 2.5rem; }
+  .section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--lime); margin-bottom: 0.8rem; }
+  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1; letter-spacing: 0.02em; color: var(--white); margin-bottom: 1rem; }
+  .section-desc { color: var(--muted); max-width: 540px; font-size: 1rem; line-height: 1.7; margin-bottom: 3rem; }
+  .detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+  .detail-card { background: var(--card); padding: 2rem 1.8rem; position: relative; overflow: hidden; transition: background 0.25s; }
+  .detail-card::after { content: ''; position: absolute; bottom: 0; left: 0; height: 2px; width: 0; background: var(--lime); transition: width 0.35s ease; }
+  .detail-card:hover { background: #1a1a1a; }
+  .detail-card:hover::after { width: 100%; }
+  .detail-icon { width: 40px; height: 40px; border: 1px solid rgba(170,255,42,0.3); border-radius: 7px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; color: var(--lime); }
+  .detail-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 0.05em; color: var(--white); margin-bottom: 0.5rem; }
+  .detail-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
+  .for-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .for-card { background: var(--card); border: 1px solid var(--border); padding: 1.5rem; display: flex; align-items: flex-start; gap: 0.8rem; }
+  .for-card-icon { color: var(--lime); flex-shrink: 0; margin-top: 2px; }
+  .for-card-title { font-weight: 600; font-size: 0.9rem; color: var(--white); margin-bottom: 0.25rem; }
+  .for-card-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
+  .output-box { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--lime); padding: 2rem 2.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .output-col-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--lime); margin-bottom: 1rem; }
+  .output-list { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+  .output-list li { font-size: 0.88rem; color: var(--muted); display: flex; gap: 0.6rem; align-items: flex-start; }
+  .output-list li::before { content: '→'; color: var(--lime); flex-shrink: 0; }
+  .crosslink { background: var(--dark); border: 1px solid var(--border); border-left: 3px solid rgba(170,255,42,0.4); padding: 1.25rem 1.75rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+  .crosslink-text { font-size: 0.88rem; color: var(--muted); }
+  .crosslink-text strong { color: var(--white); }
+  .crosslink-link { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--lime); text-decoration: none; white-space: nowrap; transition: color 0.2s; }
+  .crosslink-link:hover { color: #c8ff4d; }
+  .cta-section { position: relative; z-index: 1; background: var(--dark); border-top: 1px solid var(--border); padding: 5rem 2.5rem; text-align: center; }
+  .cta-inner { max-width: 600px; margin: 0 auto; }
+  .cta-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1; color: var(--white); margin-bottom: 1rem; }
+  .cta-title .accent { color: var(--lime); }
+  .cta-desc { color: var(--muted); font-size: 1rem; line-height: 1.7; margin-bottom: 2.5rem; }
+  .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  footer { background: var(--black); border-top: 1px solid var(--border); padding: 2rem 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; position: relative; z-index: 1; }
+  .footer-logo { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+  .footer-logo span { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 0.1em; color: var(--lime); }
+  .footer-copy { font-size: 0.75rem; color: var(--muted); text-align: center; }
+  .footer-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+  .footer-links a { font-size: 0.75rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--lime); }
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  @media (max-width: 768px) {
+    nav { padding: 0.875rem 1.25rem; }
+    .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(8,8,8,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 1.25rem 1.5rem 1.75rem; gap: 0; }
+    .nav-links.open { display: flex; }
+    .nav-links li { border-bottom: 1px solid var(--border); }
+    .nav-links li:last-child { border-bottom: none; margin-top: 0.75rem; }
+    .nav-links a { display: block; padding: 0.875rem 0; font-size: 0.9rem; }
+    .nav-cta { display: block !important; text-align: center; padding: 0.75rem 1rem !important; }
+    .hamburger { display: flex; }
+    .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .breadcrumb { padding: 5.5rem 1.25rem 0; }
+    .svc-hero { grid-template-columns: 1fr; gap: 2.5rem; padding: 2rem 1.25rem 3.5rem; }
+    .svc-number { font-size: 5rem; top: -1rem; left: 0; }
+    .content-section { padding: 3.5rem 1.25rem; }
+    .output-box { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem; }
+    .cta-section { padding: 3.5rem 1.25rem; }
+    footer { flex-direction: column; align-items: center; text-align: center; padding: 1.75rem 1.25rem; gap: 1.25rem; }
+    .footer-links { gap: 1.25rem; flex-wrap: wrap; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">
+    <img src="../PICTURES/HERO.png" alt="PCAID" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+    <span class="nav-logo-text" style="display:none;">PCAID</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../index.html#services">Services</a></li>
+    <li><a href="../index.html#about-section">About</a></li>
+    <li><a href="../index.html#gallery">Gallery</a></li>
+    <li><a href="../index.html#testimonials">Reviews</a></li>
+    <li><a href="../index.html#contact-section" class="nav-cta">Get Help</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="breadcrumb">
+  <a href="../index.html">Home</a> / <a href="../index.html#services">Services</a> / <span>Video Subtitling &amp; Captioning</span>
+</div>
+
+<div style="position:relative; overflow:hidden;">
+  <div class="svc-hero-grid-bg"></div>
+  <div class="svc-hero-glow"></div>
+  <div class="svc-hero">
+    <div class="svc-hero-content">
+      <div class="svc-number">06</div>
+      <div class="svc-label">Video Subtitling &amp; Captioning</div>
+      <h1 class="svc-title">Video<br/>Subtitling<br/>&amp; Captioning</h1>
+      <p class="svc-intro">
+        Your videos made <strong>accessible, searchable and ready for any audience</strong>. Accurate subtitles and captions in 90+ languages - delivered as SRT, VTT, or burned directly into your video.
+      </p>
+      <div class="svc-actions">
+        <a href="../index.html#contact-section" class="btn-primary">Send Your Video</a>
+        <a href="https://wa.me/4368864834687" target="_blank" rel="noopener" class="btn-outline">WhatsApp Us</a>
+      </div>
+    </div>
+    <div class="svc-hero-visual">
+      <div class="panel-label">At a Glance</div>
+      <div class="svc-stat-row">
+        <div class="svc-stat"><div class="svc-stat-num">90+</div><div class="svc-stat-lbl">Languages Supported</div></div>
+        <div class="svc-stat"><div class="svc-stat-num">SRT</div><div class="svc-stat-lbl">VTT &amp; Burned-In</div></div>
+        <div class="svc-stat"><div class="svc-stat-num">24h</div><div class="svc-stat-lbl">Standard Turnaround</div></div>
+        <div class="svc-stat"><div class="svc-stat-num">WKO</div><div class="svc-stat-lbl">Registered</div></div>
+      </div>
+      <div class="panel-label" style="margin-top:0.5rem;">What's Covered</div>
+      <ul class="svc-includes">
+        <li>Subtitles in 90+ languages - German, English, Croatian and more</li>
+        <li>English subtitles manually reviewed to native standard (IELTS C1)</li>
+        <li>SRT and VTT subtitle files for YouTube, Vimeo and social platforms</li>
+        <li>Burned-in (hardcoded) subtitles for exported video files</li>
+        <li>Closed captions for accessibility compliance</li>
+        <li>Translated subtitles - same video, different language audience</li>
+        <li>Batch processing for multiple video files</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="content-section">
+  <div class="reveal">
+    <div class="section-label">The Work</div>
+    <h2 class="section-title">What Subtitling &amp; Captioning Covers</h2>
+    <p class="section-desc">From a single YouTube video to a full series of corporate training clips - accurate, timed subtitles delivered in the format your platform or workflow requires.</p>
+  </div>
+  <div class="detail-grid reveal">
+    <div class="detail-card">
+      <div class="detail-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 10h4M6 13h8"/></svg></div>
+      <div class="detail-title">SRT &amp; VTT Subtitle Files</div>
+      <p class="detail-desc">Standard subtitle files ready to upload directly to YouTube, Vimeo, LinkedIn, or any platform that accepts external captions. No re-encoding of your video required.</p>
+    </div>
+    <div class="detail-card">
+      <div class="detail-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><rect x="5" y="8" width="14" height="5" rx="1"/></svg></div>
+      <div class="detail-title">Burned-In Subtitles</div>
+      <p class="detail-desc">Subtitles permanently embedded into the video file - ideal for social media clips, presentations, or any context where a separate file isn't practical. Delivered as a ready-to-share video.</p>
+    </div>
+    <div class="detail-card">
+      <div class="detail-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div>
+      <div class="detail-title">Multilingual Subtitles</div>
+      <p class="detail-desc">The same video subtitled into a different language - German content made accessible to English-speaking audiences, or English videos reaching German, Croatian, or other speakers. 90+ languages available.</p>
+    </div>
+    <div class="detail-card">
+      <div class="detail-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <div class="detail-title">Closed Captions for Accessibility</div>
+      <p class="detail-desc">Captions that include speaker identification and non-speech sounds - suited for accessibility compliance, deaf and hard-of-hearing viewers and platforms with accessibility requirements.</p>
+    </div>
+    <div class="detail-card">
+      <div class="detail-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+      <div class="detail-title">Corporate &amp; Training Video Captions</div>
+      <p class="detail-desc">Internal training videos, onboarding content and recorded presentations captioned for staff - especially useful for multilingual teams where not everyone shares the same working language.</p>
+    </div>
+    <div class="detail-card">
+      <div class="detail-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></div>
+      <div class="detail-title">Batch Video Processing</div>
+      <p class="detail-desc">Multiple videos processed consistently - same timing standards, same formatting, same quality throughout. Useful for podcast video series, course content, or event recordings.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="content-section">
+  <div class="reveal">
+    <div class="section-label">Who It's For</div>
+    <h2 class="section-title">This Service Is Right For You If...</h2>
+  </div>
+  <div class="for-grid reveal">
+    <div class="for-card">
+      <div class="for-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+      <div><div class="for-card-title">Content Creators &amp; YouTubers</div><div class="for-card-desc">Videos that need captions for accessibility, SEO and viewer retention - uploaded directly to YouTube or downloaded as an SRT file.</div></div>
+    </div>
+    <div class="for-card">
+      <div class="for-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+      <div><div class="for-card-title">Businesses with Video Marketing</div><div class="for-card-desc">Promotional videos, product demos, or explainer clips that need subtitles for social media - where most viewers watch without sound.</div></div>
+    </div>
+    <div class="for-card">
+      <div class="for-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div><div class="for-card-title">NGOs &amp; International Organisations</div><div class="for-card-desc">Field reports, awareness videos, or donor content that needs to reach multilingual audiences - translated subtitles for the same video in multiple languages.</div></div>
+    </div>
+    <div class="for-card">
+      <div class="for-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+      <div><div class="for-card-title">Academics &amp; Researchers</div><div class="for-card-desc">Recorded lectures, seminar presentations, or conference talks that need captions for publication, accessibility, or institutional requirements.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="content-section">
+  <div class="reveal">
+    <div class="section-label">The Output</div>
+    <h2 class="section-title">What You Get Back</h2>
+    <p class="section-desc">Accurate, timed subtitles in the format you need - ready to upload, share, or embed without any further editing on your end.</p>
+  </div>
+  <div class="output-box reveal">
+    <div>
+      <div class="output-col-label">You Receive</div>
+      <ul class="output-list">
+        <li>SRT or VTT subtitle file for direct platform upload</li>
+        <li>Burned-in video file if hardcoded subtitles are requested</li>
+        <li>English subtitles manually reviewed to native standard (IELTS C1)</li>
+        <li>Accurate timing - no subtitle drift on standard-length videos</li>
+        <li>Inaudible or unclear sections flagged rather than guessed</li>
+        <li>Delivered via email or file-sharing link</li>
+      </ul>
+    </div>
+    <div>
+      <div class="output-col-label">How It Works</div>
+      <ul class="output-list">
+        <li>Send your video file or share a YouTube / Vimeo link</li>
+        <li>Confirm the language, format and any style preferences</li>
+        <li>Standard turnaround: 24 hours per hour of video</li>
+        <li>Rush delivery available - ask about availability</li>
+        <li>Revisions included for timing or content corrections</li>
+      </ul>
+    </div>
+  </div>
+  <div class="crosslink reveal">
+    <p class="crosslink-text">Need a <strong>full written transcript</strong> of your audio or video rather than subtitles? That's a separate service.</p>
+    <a href="audio-transcription.html" class="crosslink-link">Audio Transcription &amp; Reporting →</a>
+  </div>
+</div>
+
+<div class="cta-section">
+  <div class="cta-inner reveal">
+    <div class="svc-label">Ready to Start?</div>
+    <h2 class="cta-title">Make Your Video<br/><span class="accent">Work For Everyone</span></h2>
+    <p class="cta-desc">Send your video file or share a link by WhatsApp or email. Tell us the language and format you need - we'll handle the rest.</p>
+    <div class="cta-actions">
+      <a href="../index.html#contact-section" class="btn-primary">Send Your Video</a>
+      <a href="https://wa.me/4368864834687" target="_blank" rel="noopener" class="btn-outline">Chat on WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <a class="footer-logo" href="../index.html">
+    <svg width="24" height="24" viewBox="0 0 40 40" fill="none"><path d="M10 6 C10 6 10 34 10 34 L18 34 L18 24 C18 24 28 24 28 15 C28 6 18 6 10 6 Z M18 8 C18 8 24 8 24 15 C24 22 18 22 18 22 L18 8Z" fill="#AAFF2A"/><circle cx="30" cy="28" r="2.5" fill="white"/></svg>
+    <span>PCAID</span>
+  </a>
+  <p class="footer-copy">© 2025 PCAID · Dienstleistungen in der automatischen Datenverarbeitung und Informationstechnik · WKO Graz</p>
+  <ul class="footer-links">
+    <li><a href="../index.html#services">Services</a></li>
+    <li><a href="audio-transcription.html">Transcription</a></li>
+    <li><a href="data-services.html">Data Services</a></li>
+    <li><a href="document-digitisation.html">Digitisation</a></li>
+    <li><a href="../index.html#contact-section">Contact</a></li>
+  </ul>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => { navLinks.classList.toggle('open'); hamburger.classList.toggle('active'); });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { navLinks.classList.remove('open'); hamburger.classList.remove('active'); }));
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.08 });
+  reveals.forEach(r => observer.observe(r));
+</script>
+</body>
+</html>
