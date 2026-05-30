@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 <meta name="theme-color" content="#080808"/>
 <title>PCAID – IT Services Graz</title>
-<meta name="description" content="WKO-registrierter PC-Reparatur & IT-Support in Graz. Hardware-Diagnose, Datenrettung, Scripting & Automatisierung. PC Reparatur Graz – schnell, ehrlich, zuverlässig."/>
-<meta name="keywords" content="PC Reparatur Graz, IT Support Graz, Datenrettung Graz, Laptop Reparatur Graz, Datenverlust Graz, WKO IT Graz, PCAID"/>
-<meta property="og:title" content="PCAID – PC Reparatur & IT Services Graz"/>
-<meta property="og:description" content="WKO-registrierter IT-Service in Graz. Hardware-Diagnose, Datenrettung, Scripting & Automatisierung."/>
+<meta name="description" content="WKO-registrierter IT-Service in Graz. Hardware-Reparatur, Datenrettung, Webentwicklung, Datendienste, Transkription, Dokumenten-Digitalisierung & Video-Untertitelung. Schnell, ehrlich, zuverlässig."/>
+<meta name="keywords" content="PC Reparatur Graz, IT Support Graz, Datenrettung Graz, Laptop Reparatur Graz, Webentwicklung Graz, Datenbereinigung, OCR Digitalisierung, Audio Transkription, Video Untertitel Graz, Subtitling Austria, WKO IT Graz, PCAID"/>
+<meta property="og:title" content="PCAID – IT Services Graz"/>
+<meta property="og:description" content="WKO-registrierter IT-Service in Graz. Hardware, Data, Web, Digitisation & Transcription."/>
 <meta property="og:type" content="website"/>
 <meta property="og:image" content="https://pcaid-at.vercel.app/PICTURES/og-image.jpg"/>
 <meta property="og:image:width" content="1200"/>
@@ -18,8 +18,8 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "PCAID",
-  "description": "WKO-registrierter PC-Reparatur & IT-Support in Graz. Hardware-Diagnose, Datenrettung, Scripting und Automatisierung.",
-  "url": "https://pcaid.at",
+  "description": "WKO-registrierter IT-Service in Graz. Hardware-Reparatur, Datenrettung, Webentwicklung, Datendienste, OCR-Digitalisierung, Audio-Transkription und Video-Untertitelung.",
+  "url": "https://pcaid-at.vercel.app",
   "telephone": "+436886483468",
   "email": "pcaid.at@gmail.com",
   "address": {
@@ -30,37 +30,24 @@
     "postalCode": "8010",
     "addressCountry": "AT"
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 47.0707,
-    "longitude": 15.4395
-  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 47.0707, "longitude": 15.4395 },
   "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "09:00",
-      "closes": "18:00"
-    }
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" }
   ],
-  "sameAs": [],
   "priceRange": "€€",
   "currenciesAccepted": "EUR",
   "paymentAccepted": "Cash, Bank Transfer",
-  "areaServed": {
-    "@type": "City",
-    "name": "Graz"
-  },
+  "areaServed": { "@type": "City", "name": "Graz" },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "IT Services",
     "itemListElement": [
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "PC & Laptop Diagnostics"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Hardware Replacement"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Data Recovery"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Scripting & Automation"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Software & OS Setup"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "IT Support & Consulting"}}
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Device Repair & Diagnostics"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Data Services"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Document Digitisation & Automation"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Web Development"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Audio Transcription & Reporting"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Video Subtitling & Captioning"}}
     ]
   }
 }
@@ -79,9 +66,7 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
-
   body {
     background: var(--black);
     color: var(--white);
@@ -91,7 +76,6 @@
     overflow-x: hidden;
   }
 
-  /* ── NOISE TEXTURE OVERLAY ── */
   body::before {
     content: '';
     position: fixed;
@@ -115,27 +99,9 @@
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
   }
-
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    text-decoration: none;
-  }
-
-  .nav-logo img {
-    height: 56px;
-    width: auto;
-    display: block;
-    mix-blend-mode: screen;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-  }
-
+  .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+  .nav-logo img { height: 56px; width: auto; display: block; mix-blend-mode: screen; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
   .nav-links a {
     color: var(--muted);
     text-decoration: none;
@@ -145,9 +111,7 @@
     text-transform: uppercase;
     transition: color 0.2s;
   }
-
   .nav-links a:hover { color: var(--lime); }
-
   .nav-cta {
     background: var(--lime);
     color: var(--black) !important;
@@ -155,26 +119,48 @@
     border-radius: 4px;
     font-weight: 700 !important;
   }
-
   .nav-cta:hover { background: #c8ff4d !important; color: var(--black) !important; }
 
-  /* hamburger */
-  .hamburger {
+  /* Services dropdown */
+  .nav-dropdown { position: relative; }
+  .nav-dropdown > a { display: flex; align-items: center; gap: 0.3rem; cursor: pointer; }
+  .nav-dropdown > a::after { content: '▾'; font-size: 0.7rem; transition: transform 0.2s; }
+  .nav-dropdown.open > a::after { transform: rotate(180deg); }
+  .dropdown-menu {
     display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    padding: 4px;
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(17,17,17,0.98);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(16px);
+    min-width: 280px;
+    padding: 0.5rem 0;
+    border-radius: 4px;
+    list-style: none;
+    z-index: 200;
   }
-  .hamburger span {
+  .nav-dropdown.open .dropdown-menu { display: block; }
+  .dropdown-menu li a {
     display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--lime);
-    transition: all 0.3s;
+    padding: 0.75rem 1.2rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-transform: none;
+    letter-spacing: 0.03em;
+    border-left: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+    text-decoration: none;
+    font-weight: 500;
   }
+  .dropdown-menu li a:hover { color: var(--lime); border-left-color: var(--lime); background: rgba(170,255,42,0.04); }
+
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px;
+    cursor: pointer; background: none; border: none; padding: 4px;
+  }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--lime); transition: all 0.3s; }
 
   /* ── HERO ── */
   #hero {
@@ -185,16 +171,13 @@
     padding: 6rem 2.5rem 4rem;
     overflow: hidden;
   }
-
   .hero-grid-bg {
-    position: absolute;
-    inset: 0;
+    position: absolute; inset: 0;
     background-image:
       linear-gradient(rgba(170,255,42,0.04) 1px, transparent 1px),
       linear-gradient(90deg, rgba(170,255,42,0.04) 1px, transparent 1px);
     background-size: 60px 60px;
   }
-
   .hero-glow {
     position: absolute;
     width: 900px; height: 900px;
@@ -202,796 +185,275 @@
     top: -100px; right: -100px;
     pointer-events: none;
   }
-
-  .hero-content {
-    position: relative;
-    max-width: 750px;
-    z-index: 1;
-  }
-
+  .hero-content { position: relative; max-width: 750px; z-index: 1; }
   .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: rgba(170,255,42,0.1);
-    border: 1px solid rgba(170,255,42,0.3);
-    color: var(--lime);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 0.35rem 0.9rem;
-    border-radius: 100px;
-    margin-bottom: 1.8rem;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(170,255,42,0.1); border: 1px solid rgba(170,255,42,0.3);
+    color: var(--lime); font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 0.35rem 0.9rem; border-radius: 100px; margin-bottom: 1.8rem;
     animation: fadeUp 0.6s ease both;
   }
-
   .hero-badge::before {
-    content: '';
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--lime);
-    animation: pulse 2s infinite;
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--lime); animation: pulse 2s infinite;
   }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
-
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
   h1 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(5rem, 13vw, 10.5rem);
-    line-height: 0.95;
-    letter-spacing: 0.02em;
-    color: var(--white);
+    line-height: 0.95; letter-spacing: 0.02em; color: var(--white);
     animation: fadeUp 0.6s 0.1s ease both;
   }
-
   h1 .accent { color: var(--lime); }
-
   .hero-sub {
-    margin-top: 1.5rem;
-    font-size: 1.1rem;
-    color: var(--muted);
-    max-width: 520px;
-    line-height: 1.7;
-    animation: fadeUp 0.6s 0.2s ease both;
+    margin-top: 1.5rem; font-size: 1.1rem; color: var(--muted);
+    max-width: 520px; line-height: 1.7; animation: fadeUp 0.6s 0.2s ease both;
   }
-
   .hero-sub strong { color: var(--white); }
-
   .hero-actions {
-    margin-top: 2.5rem;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+    margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap;
     animation: fadeUp 0.6s 0.3s ease both;
   }
-
   .btn-primary {
-    background: var(--lime);
-    color: var(--black);
-    padding: 0.85rem 2rem;
-    border-radius: 4px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: background 0.2s, transform 0.15s;
+    background: var(--lime); color: var(--black);
+    padding: 0.85rem 2rem; border-radius: 4px; font-weight: 700;
+    font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase;
+    text-decoration: none; transition: background 0.2s, transform 0.15s;
   }
-
   .btn-primary:hover { background: #c8ff4d; transform: translateY(-2px); }
-
   .btn-outline {
-    border: 1px solid var(--border);
-    color: var(--white);
-    padding: 0.85rem 2rem;
-    border-radius: 4px;
-    font-weight: 500;
-    font-size: 0.9rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: border-color 0.2s, color 0.2s, transform 0.15s;
+    border: 1px solid var(--border); color: var(--white);
+    padding: 0.85rem 2rem; border-radius: 4px; font-weight: 500;
+    font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase;
+    text-decoration: none; transition: border-color 0.2s, color 0.2s, transform 0.15s;
   }
-
   .btn-outline:hover { border-color: var(--lime); color: var(--lime); transform: translateY(-2px); }
-
   .hero-stats {
-    margin-top: 4rem;
-    display: flex;
-    gap: 3rem;
-    flex-wrap: wrap;
+    margin-top: 4rem; display: flex; gap: 3rem; flex-wrap: wrap;
     animation: fadeUp 0.6s 0.4s ease both;
   }
+  .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--lime); line-height: 1; }
+  .stat-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.2rem; }
 
-  .stat-item { }
-  .stat-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.5rem;
-    color: var(--lime);
-    line-height: 1;
-  }
-  .stat-label {
-    font-size: 0.75rem;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-top: 0.2rem;
-  }
+  .seo-keywords { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
 
   /* ── SECTIONS ── */
-
-  .seo-keywords {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0,0,0,0);
-  white-space: nowrap;
-}
-
   section {
-    position: relative;
-    z-index: 1;
-    padding: 6rem 2.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    position: relative; z-index: 1;
+    padding: 6rem 2.5rem; max-width: 1200px; margin: 0 auto;
   }
-
   .section-label {
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--lime);
-    margin-bottom: 0.8rem;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--lime); margin-bottom: 0.8rem;
   }
-
   .section-title {
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(2rem, 5vw, 3.5rem);
-    line-height: 1;
-    letter-spacing: 0.02em;
-    color: var(--white);
-    margin-bottom: 1rem;
+    line-height: 1; letter-spacing: 0.02em; color: var(--white); margin-bottom: 1rem;
   }
+  .section-desc { color: var(--muted); max-width: 540px; font-size: 1rem; line-height: 1.7; margin-bottom: 3.5rem; }
+  .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); max-width: 100%; margin: 0 2.5rem; }
 
-  .section-desc {
-    color: var(--muted);
-    max-width: 540px;
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 3.5rem;
-  }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 
-  .divider {
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--border), transparent);
-    max-width: 100%;
-    margin: 0 2.5rem;
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ── SERVICES ── */
-  .services-grid {
+  /* ── SERVICE CATEGORIES GRID ── */
+  .services-cat-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1px;
     background: var(--border);
     border: 1px solid var(--border);
   }
-
-  .service-card {
+  .svc-cat-card {
     background: var(--card);
     padding: 2.5rem 2rem;
     position: relative;
     overflow: hidden;
-    cursor: default;
     transition: background 0.25s;
-  }
-
-  .service-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0;
-    height: 2px;
-    width: 0;
-    background: var(--lime);
-    transition: width 0.35s ease;
-  }
-
-  .service-card:hover { background: #1a1a1a; }
-  .service-card:hover::after { width: 100%; }
-
-  .svc-icon {
-    width: 44px; height: 44px;
-    border: 1px solid rgba(170,255,42,0.3);
-    border-radius: 8px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    color: var(--lime);
+    flex-direction: column;
+    gap: 0;
   }
-
-  .svc-title {
+  .svc-cat-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    height: 2px; width: 0; background: var(--lime); transition: width 0.35s ease;
+  }
+  .svc-cat-card:hover { background: #1a1a1a; }
+  .svc-cat-card:hover::after { width: 100%; }
+  .svc-cat-icon {
+    width: 44px; height: 44px;
+    border: 1px solid rgba(170,255,42,0.3); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.5rem; color: var(--lime);
+  }
+  .svc-cat-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.3rem;
-    letter-spacing: 0.05em;
-    color: var(--white);
-    margin-bottom: 0.6rem;
+    font-size: 1.4rem; letter-spacing: 0.05em; color: var(--white); margin-bottom: 0.6rem;
   }
-
-  .svc-desc {
-    font-size: 0.88rem;
-    color: var(--muted);
-    line-height: 1.65;
+  .svc-cat-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.65; margin-bottom: 1.5rem; flex-grow: 1; }
+  .svc-cat-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
+  .svc-tag {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--lime); background: rgba(170,255,42,0.08);
+    border: 1px solid rgba(170,255,42,0.2); padding: 0.2rem 0.55rem; border-radius: 3px;
   }
+  .svc-cat-link {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--lime); text-decoration: none; transition: gap 0.2s;
+    margin-top: auto;
+  }
+  .svc-cat-link:hover { gap: 0.7rem; }
+  .svc-cat-link::after { content: '→'; }
 
   /* ── ABOUT ── */
-  #about {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: center;
-  }
-
-  .about-visual {
-    position: relative;
-  }
-
+  #about { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .about-visual { position: relative; }
   .about-img-placeholder {
-    width: 100%;
-    aspect-ratio: 4/5;
-    background: var(--card);
-    border: 1px solid var(--border);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--muted);
-    font-size: 0.8rem;
-    text-align: center;
-    gap: 1rem;
-    position: relative;
-    overflow: hidden;
+    width: 100%; aspect-ratio: 4/5; background: var(--card); border: 1px solid var(--border);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: var(--muted); font-size: 0.8rem; text-align: center; gap: 1rem;
+    position: relative; overflow: hidden;
   }
-
   .about-img-placeholder::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 30px,
-      rgba(170,255,42,0.02) 30px,
-      rgba(170,255,42,0.02) 31px
-    );
+    content: ''; position: absolute; inset: 0;
+    background: repeating-linear-gradient(45deg, transparent, transparent 30px, rgba(170,255,42,0.02) 30px, rgba(170,255,42,0.02) 31px);
   }
-
   .about-tag {
-    position: absolute;
-    bottom: 1.5rem; right: 1.5rem;
-    background: var(--lime);
-    color: var(--black);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 0.4rem 0.8rem;
+    position: absolute; bottom: 1.5rem; right: 1.5rem;
+    background: var(--lime); color: var(--black);
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.4rem 0.8rem;
   }
-
   .about-text .section-desc { margin-bottom: 2rem; }
-
-  .about-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-  }
-
-  .about-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.8rem;
-    font-size: 0.9rem;
-    color: var(--muted);
-  }
-
-  .about-list li::before {
-    content: '▸';
-    color: var(--lime);
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
+  .about-list { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
+  .about-list li { display: flex; align-items: flex-start; gap: 0.8rem; font-size: 0.9rem; color: var(--muted); }
+  .about-list li::before { content: '▸'; color: var(--lime); flex-shrink: 0; margin-top: 1px; }
   .wko-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 2rem;
-    border: 1px solid var(--border);
-    padding: 0.6rem 1rem;
-    font-size: 0.75rem;
-    color: var(--muted);
-    border-radius: 4px;
+    display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 2rem;
+    border: 1px solid var(--border); padding: 0.6rem 1rem; font-size: 0.75rem;
+    color: var(--muted); border-radius: 4px;
   }
-
   .wko-badge span { color: var(--lime); font-weight: 600; }
 
   /* ── GALLERY ── */
-  #gallery .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-    gap: 4px;
-  }
-
-  .gallery-item {
-    background: var(--card);
-    border: 1px solid var(--border);
-    aspect-ratio: 4/3;
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
-  }
-
-  .gallery-item.tall { grid-row: span 2; aspect-ratio: auto; }
-  .gallery-item.wide { grid-column: span 2; }
-
-  .gallery-item img {
-    width: 100%; height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-    display: block;
-  }
-
-  .gallery-item:hover img { transform: scale(1.05); }
-
-  .gallery-placeholder {
-    width: 100%; height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.8rem;
-    color: var(--border);
-    font-size: 0.75rem;
-    text-align: center;
-    padding: 1rem;
-    background: repeating-linear-gradient(
-      -45deg,
-      var(--card),
-      var(--card) 10px,
-      #131313 10px,
-      #131313 11px
-    );
-  }
-
-  .gallery-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-    opacity: 0;
-    transition: opacity 0.3s;
-    display: flex;
-    align-items: flex-end;
-    padding: 1rem;
-  }
-
-  .gallery-item:hover .gallery-overlay { opacity: 1; }
-
-  .gallery-overlay span {
-    font-size: 0.78rem;
-    color: var(--lime);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-
   /* ── TESTIMONIALS ── */
   #testimonials { background: none; }
-
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .testi-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    padding: 2rem;
-    position: relative;
-  }
-
+  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+  .testi-card { background: var(--card); border: 1px solid var(--border); padding: 2rem; position: relative; }
   .testi-card::before {
-    content: '"';
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 6rem;
-    color: rgba(170,255,42,0.08);
-    position: absolute;
-    top: -1rem; left: 1rem;
-    line-height: 1;
+    content: '"'; font-family: 'Bebas Neue', sans-serif; font-size: 6rem;
+    color: rgba(170,255,42,0.08); position: absolute; top: -1rem; left: 1rem; line-height: 1;
   }
-
-  .testi-text {
-    font-size: 0.9rem;
-    color: #aaa;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-    position: relative;
-    z-index: 1;
-  }
-
-  .testi-author {
-    display: flex;
-    align-items: center;
-    gap: 0.9rem;
-  }
-
+  .testi-text { font-size: 0.9rem; color: #aaa; line-height: 1.7; margin-bottom: 1.5rem; position: relative; z-index: 1; }
+  .testi-author { display: flex; align-items: center; gap: 0.9rem; }
   .testi-avatar {
-    width: 40px; height: 40px;
-    border-radius: 50%;
-    background: var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1rem;
-    color: var(--lime);
-    border: 1px solid rgba(170,255,42,0.3);
-    flex-shrink: 0;
+    width: 40px; height: 40px; border-radius: 50%; background: var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif; font-size: 1rem; color: var(--lime);
+    border: 1px solid rgba(170,255,42,0.3); flex-shrink: 0;
   }
-
-  .testi-name {
-    font-weight: 600;
-    font-size: 0.88rem;
-    color: var(--white);
-  }
-
-  .testi-role {
-    font-size: 0.75rem;
-    color: var(--muted);
-  }
-
-  .stars {
-    color: var(--lime);
-    font-size: 0.75rem;
-    margin-bottom: 0.8rem;
-  }
+  .testi-name { font-weight: 600; font-size: 0.88rem; color: var(--white); }
+  .testi-role { font-size: 0.75rem; color: var(--muted); }
+  .stars { color: var(--lime); font-size: 0.75rem; margin-bottom: 0.8rem; }
 
   /* ── CONTACT ── */
   #contact-section {
-    background: var(--dark);
-    max-width: 100%;
-    padding: 6rem 2.5rem;
-    border-top: 1px solid var(--border);
+    background: var(--dark); max-width: 100%;
+    padding: 6rem 2.5rem; border-top: 1px solid var(--border);
   }
-
   .contact-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 5rem;
-    align-items: start;
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: start;
   }
-
-  .contact-info { }
-
-  .contact-detail {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-bottom: 1.8rem;
-  }
-
+  .contact-detail { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.8rem; }
   .contact-icon {
-    width: 40px; height: 40px;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--lime);
-    flex-shrink: 0;
+    width: 40px; height: 40px; border: 1px solid var(--border); border-radius: 6px;
+    display: flex; align-items: center; justify-content: center; color: var(--lime); flex-shrink: 0;
   }
-
-  .contact-detail-text { }
-  .contact-detail-label {
-    font-size: 0.7rem;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 0.2rem;
+  .contact-detail-label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.2rem; }
+  .contact-detail-value { font-size: 0.9rem; color: var(--white); }
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-group label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .form-group input, .form-group select, .form-group textarea {
+    background: var(--card); border: 1px solid var(--border); color: var(--white);
+    padding: 0.8rem 1rem; font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+    outline: none; transition: border-color 0.2s; border-radius: 2px; width: 100%;
   }
-  .contact-detail-value {
-    font-size: 0.9rem;
-    color: var(--white);
-  }
-
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-
-  .form-group label {
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    background: var(--card);
-    border: 1px solid var(--border);
-    color: var(--white);
-    padding: 0.8rem 1rem;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem;
-    outline: none;
-    transition: border-color 0.2s;
-    border-radius: 2px;
-    width: 100%;
-  }
-
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
-    border-color: var(--lime);
-  }
-
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--lime); }
   .form-group select option { background: var(--card); }
-
   .form-group textarea { resize: vertical; min-height: 120px; }
-
   .form-submit {
-    background: var(--lime);
-    color: var(--black);
-    border: none;
-    padding: 1rem 2rem;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.15s;
-    border-radius: 2px;
+    background: var(--lime); color: var(--black); border: none; padding: 1rem 2rem;
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer;
+    transition: background 0.2s, transform 0.15s; border-radius: 2px;
   }
-
   .form-submit:hover { background: #c8ff4d; transform: translateY(-2px); }
-
-  .form-note {
-    font-size: 0.72rem;
-    color: var(--muted);
-    text-align: center;
-  }
 
   /* ── FOOTER ── */
   footer {
-    background: var(--black);
-    border-top: 1px solid var(--border);
-    padding: 2rem 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-    position: relative;
-    z-index: 1;
+    background: var(--black); border-top: 1px solid var(--border);
+    padding: 2rem 2.5rem; display: flex; align-items: center;
+    justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+    position: relative; z-index: 1;
   }
-
-  .footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-  }
-
-  .footer-logo span {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.2rem;
-    letter-spacing: 0.1em;
-    color: var(--lime);
-  }
-
-  .footer-copy {
-    font-size: 0.75rem;
-    color: var(--muted);
-    text-align: center;
-  }
-
-  .footer-links {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-  }
-
-  .footer-links a {
-    font-size: 0.75rem;
-    color: var(--muted);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
+  .footer-logo { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+  .footer-logo span { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 0.1em; color: var(--lime); }
+  .footer-copy { font-size: 0.75rem; color: var(--muted); text-align: center; }
+  .footer-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+  .footer-links a { font-size: 0.75rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
   .footer-links a:hover { color: var(--lime); }
 
-  /* ── LIGHTBOX ── */
-  .lightbox {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.93);
-    z-index: 200;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-  }
-
-  .lightbox.open { display: flex; }
-
-  .lightbox-img {
-    max-width: 90vw;
-    max-height: 85vh;
-    object-fit: contain;
-    border: 1px solid var(--border);
-  }
-
-  .lightbox-close {
-    position: absolute;
-    top: 1.5rem; right: 1.5rem;
-    background: none;
-    border: 1px solid var(--border);
-    color: var(--white);
-    width: 40px; height: 40px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: border-color 0.2s, color 0.2s;
-  }
-
-  .lightbox-close:hover { border-color: var(--lime); color: var(--lime); }
+  /* ── SCROLL REVEAL ── */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
 
   /* ── MOBILE ── */
   @media (max-width: 768px) {
-    /* Nav */
     nav { padding: 0.875rem 1.25rem; }
     .nav-links {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 100%; left: 0; right: 0;
-      background: rgba(8,8,8,0.97);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 1.25rem 1.5rem 1.75rem;
-      gap: 0;
+      display: none; flex-direction: column; position: absolute;
+      top: 100%; left: 0; right: 0; background: rgba(8,8,8,0.97);
+      backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem 1.75rem; gap: 0;
     }
     .nav-links.open { display: flex; }
     .nav-links li { border-bottom: 1px solid var(--border); }
     .nav-links li:last-child { border-bottom: none; margin-top: 0.75rem; }
-    .nav-links a {
-      display: block;
-      padding: 0.875rem 0;
-      font-size: 0.9rem;
-    }
-    .nav-cta {
-      display: block !important;
-      text-align: center;
-      padding: 0.75rem 1rem !important;
-    }
+    .nav-links a { display: block; padding: 0.875rem 0; font-size: 0.9rem; }
+    .nav-cta { display: block !important; text-align: center; padding: 0.75rem 1rem !important; }
     .hamburger { display: flex; }
-    /* Hamburger → X animation */
     .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .hamburger.active span:nth-child(2) { opacity: 0; }
     .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    /* Hero */
-    #hero {
-      min-height: 100svh;
-      padding: 5.5rem 1.25rem 3rem;
-      align-items: flex-start;
-    }
+    .dropdown-menu { position: static; transform: none; background: rgba(22,22,22,0.98); border: none; border-left: 2px solid var(--border); margin-left: 1rem; padding: 0.25rem 0; display: none; }
+    .nav-dropdown.open .dropdown-menu { display: block; }
+    .nav-dropdown > a::after { display: none; }
+    #hero { min-height: 100svh; padding: 5.5rem 1.25rem 3rem; align-items: flex-start; }
     .hero-glow { width: 320px; height: 320px; top: -60px; right: -60px; }
     h1 { font-size: clamp(3.8rem, 18vw, 6rem); }
     .hero-sub { font-size: 0.95rem; max-width: 100%; }
     .hero-actions { flex-direction: column; gap: 0.75rem; }
-    .btn-primary, .btn-outline {
-      width: 100%;
-      text-align: center;
-      padding: 1rem 1.5rem;
-      font-size: 0.95rem;
-    }
-    .hero-stats {
-      gap: 1.5rem;
-      margin-top: 2.5rem;
-      flex-wrap: nowrap;
-    }
+    .btn-primary, .btn-outline { width: 100%; text-align: center; padding: 1rem 1.5rem; font-size: 0.95rem; }
+    .hero-stats { gap: 1.5rem; margin-top: 2.5rem; flex-wrap: nowrap; }
     .stat-num { font-size: 2rem; }
-    .stat-label { font-size: 0.65rem; }
-
-    /* Sections */
     section { padding: 3.5rem 1.25rem; }
-
-    /* Services */
-    .services-grid { grid-template-columns: 1fr; gap: 1.5px; }
-    .service-card { padding: 1.75rem 1.25rem; }
-
-    /* About */
-    #about { grid-template-columns: 1fr; gap: 2rem; }
-    .about-visual { order: -1; }
-    .about-img-placeholder { aspect-ratio: 16/9; }
-    .about-tag { font-size: 0.65rem; padding: 0.3rem 0.6rem; bottom: 0.75rem; right: 0.75rem; }
-
-    /* Gallery */
-    .gallery-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 3px; }
-    .gallery-item.tall { grid-row: span 1; }
-    .gallery-item.wide { grid-column: span 1; }
-    .gallery-item { aspect-ratio: 1/1; }
-    /* Always show overlay label on mobile (no hover) */
-    .gallery-overlay { opacity: 1; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent); }
-
-    /* Testimonials */
+    .services-cat-grid { grid-template-columns: 1fr; }
+    #about { grid-template-columns: 1fr; gap: 2.5rem; }
     .testimonials-grid { grid-template-columns: 1fr; }
-    .testi-card { padding: 1.5rem; }
-
-    /* Contact */
     #contact-section { padding: 3.5rem 1.25rem; }
     .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
     .form-row { grid-template-columns: 1fr; }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      font-size: 1rem; /* prevents iOS zoom on focus */
-      padding: 0.9rem 1rem;
-    }
+    .form-group input, .form-group select, .form-group textarea { font-size: 1rem; padding: 0.9rem 1rem; }
     .form-submit { width: 100%; padding: 1rem; font-size: 1rem; }
     .contact-icon { width: 36px; height: 36px; flex-shrink: 0; }
-
-    /* Footer */
-    footer {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 1.75rem 1.25rem;
-      gap: 1.25rem;
-    }
+    footer { flex-direction: column; align-items: center; text-align: center; padding: 1.75rem 1.25rem; gap: 1.25rem; }
     .footer-links { gap: 1.25rem; flex-wrap: wrap; justify-content: center; }
 
-    /* Lightbox */
-    .lightbox { padding: 1rem; }
-    .lightbox-close { top: 0.75rem; right: 0.75rem; width: 44px; height: 44px; }
   }
-
-  /* ── SMALL PHONES ── */
   @media (max-width: 390px) {
     h1 { font-size: clamp(3.2rem, 20vw, 4.5rem); }
     .hero-stats { gap: 1rem; }
@@ -999,17 +461,6 @@
     section { padding: 3rem 1rem; }
     #contact-section { padding: 3rem 1rem; }
     nav { padding: 0.75rem 1rem; }
-  }
-
-  /* ── SCROLL REVEAL ── */
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
   }
 </style>
 </head>
@@ -1021,9 +472,18 @@
     <img src="PICTURES/HERO.png" alt="PCAID"/>
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#services">Services</a></li>
+    <li class="nav-dropdown" id="navServicesDrop">
+      <a href="#services" id="servicesToggle">Services</a>
+      <ul class="dropdown-menu">
+        <li><a href="services/device-repair.html">Device Repair &amp; Diagnostics</a></li>
+        <li><a href="services/data-services.html">Data Services</a></li>
+        <li><a href="services/document-digitisation.html">Document Digitisation &amp; Automation</a></li>
+        <li><a href="services/web-development.html">Web Development</a></li>
+        <li><a href="services/audio-transcription.html">Audio Transcription &amp; Reporting</a></li>
+        <li><a href="services/video-subtitling.html">Video Subtitling &amp; Captioning</a></li>
+      </ul>
+    </li>
     <li><a href="#about-section">About</a></li>
-    <li><a href="#gallery">Gallery</a></li>
     <li><a href="#testimonials">Reviews</a></li>
     <li><a href="#contact-section" class="nav-cta">Get Help</a></li>
   </ul>
@@ -1037,14 +497,14 @@
   <div class="hero-grid-bg"></div>
   <div class="hero-glow"></div>
   <div class="hero-content">
-    <div class="hero-badge">PC Reparatur Graz · IT Support · Datenrettung</div>
-    <h1>YOUR PC.<br/><span class="accent">FIXED FAST.</span></h1>
+    <div class="hero-badge">Graz · IT Services · WKO Registered</div>
+    <h1>PCAID.<br/><span class="accent">WE BUILD.<br/>WE FIX.</span></h1>
     <p class="hero-sub">
-      Professional IT diagnostics, hardware repair, data recovery, and custom scripting & automation.<br/>
-      <strong>Hardware & Software expertise you can trust.</strong> 
+      From broken hardware to buried paperwork...<br/>
+      <strong>We handle it.</strong>
     </p>
     <div class="hero-actions">
-      <a href="#contact-section" class="btn-primary">Book a Repair</a>
+      <a href="#contact-section" class="btn-primary">Get a Quote</a>
       <a href="#services" class="btn-outline">Our Services</a>
     </div>
     <div class="hero-stats">
@@ -1053,8 +513,8 @@
         <div class="stat-label">Years Experience</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">100%</div>
-        <div class="stat-label">Honest Diagnostics</div>
+        <div class="stat-num">6</div>
+        <div class="stat-label">Service Areas</div>
       </div>
       <div class="stat-item">
         <div class="stat-num">WKO</div>
@@ -1071,51 +531,108 @@
   <div class="reveal">
     <div class="section-label">What We Do</div>
     <h2 class="section-title">Our Services</h2>
-    <p class="section-desc">From board-level diagnostics to full system recovery, and custom scripting to workflow automation — we fix and build what others give up on.</p>
+    <p class="section-desc">From board-level hardware diagnostics to custom web builds, structured data work and document automation - PCAID covers the full spectrum of IT services for individuals and businesses.</p>
   </div>
-  <div class="services-grid reveal">
-    <div class="service-card">
-      <div class="svc-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
-      </div>
-      <div class="svc-title">Scripting & Automation</div>
-      <p class="svc-desc">Custom scripts and automation tools for repetitive tasks, system administration, data processing, and workflow optimization. Python, PowerShell, Bash — tailored to your needs.</p>
-    </div>
-    <div class="service-card">
-      <div class="svc-icon">
+  <div class="services-cat-grid reveal">
+
+    <!-- 1 -->
+    <div class="svc-cat-card">
+      <div class="svc-cat-icon">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
       </div>
-      <div class="svc-title">PC & Laptop Diagnostics</div>
-      <p class="svc-desc">Full hardware diagnostics including motherboard, CPU, RAM, and power system checks. We identify the exact fault before touching a component.</p>
-    </div>
-    <div class="service-card">
-      <div class="svc-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+      <div class="svc-cat-title">Device Repair &amp; Diagnostics</div>
+      <p class="svc-cat-desc">Full hardware diagnostics and component-level repair for laptops and PCs. Screen replacements, battery swaps, charging ports, RAM/SSD upgrades, data recovery and OS setup.</p>
+      <div class="svc-cat-tags">
+        <span class="svc-tag">Laptops</span>
+        <span class="svc-tag">Motherboard</span>
+        <span class="svc-tag">Data Recovery</span>
+        <span class="svc-tag">OS Setup</span>
       </div>
-      <div class="svc-title">Hardware Replacement</div>
-      <p class="svc-desc">Screen replacements, battery swaps, keyboard repairs, charging port fixes, and GPU/RAM upgrades.</p>
+      <a href="services/device-repair.html" class="svc-cat-link">Learn More</a>
     </div>
-    <div class="service-card">
-      <div class="svc-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+
+    <!-- 2 -->
+    <div class="svc-cat-card">
+      <div class="svc-cat-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
       </div>
-      <div class="svc-title">Data Recovery</div>
-      <p class="svc-desc">Recover lost files from failed hard drives, corrupted SSDs, and formatted partitions. We handle cases others turn away.</p>
-    </div>
-    <div class="service-card">
-      <div class="svc-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 19.07a10 10 0 010-14.14"/></svg>
+      <div class="svc-cat-title">Data Services</div>
+      <p class="svc-cat-desc">Professional data cleaning, structuring, formatting analysis. Raw, messy spreadsheets turned into clean, usable datasets - with optional scripting to automate recurring tasks.</p>
+      <div class="svc-cat-tags">
+        <span class="svc-tag">Data Cleaning</span>
+        <span class="svc-tag">Excel</span>
+        <span class="svc-tag">CSV</span>
+        <span class="svc-tag">Structuring</span>
+        <span class="svc-tag">Scripts</span>
       </div>
-      <div class="svc-title">IT Support & Consulting</div>
-      <p class="svc-desc">Network setup, system optimization, security hardening, and on-site or remote IT support for individuals and small businesses in Graz.</p>
+      <a href="services/data-services.html" class="svc-cat-link">Learn More</a>
     </div>
-    <div class="service-card">
-      <div class="svc-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+
+    <!-- 3 -->
+    <div class="svc-cat-card">
+      <div class="svc-cat-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
       </div>
-      <div class="svc-title">Software & OS Setup</div>
-      <p class="svc-desc">Windows, Linux and macOS installation, driver setup, performance tuning, virus removal, and software configuration for home and office environments.</p>
+      <div class="svc-cat-title">Document Digitisation &amp; Automation</div>
+      <p class="svc-cat-desc">OCR extraction from scanned forms and PDFs into structured databases. Python scripting and automation pipelines - turning paper-based and manual processes into searchable, repeatable digital workflows.</p>
+      <div class="svc-cat-tags">
+        <span class="svc-tag">OCR</span>
+        <span class="svc-tag">PDF Extraction</span>
+        <span class="svc-tag">Database</span>
+        <span class="svc-tag">Scripting</span>
+        <span class="svc-tag">Automation</span>
+      </div>
+      <a href="services/document-digitisation.html" class="svc-cat-link">Learn More</a>
     </div>
+
+    <!-- 4 -->
+    <div class="svc-cat-card">
+      <div class="svc-cat-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      </div>
+      <div class="svc-cat-title">Web Development</div>
+      <p class="svc-cat-desc">Custom websites and landing pages for small businesses, freelancers and professionals. Clean, fast, mobile-friendly builds - from single-page sites to multi-section business presences.</p>
+      <div class="svc-cat-tags">
+        <span class="svc-tag">HTML/CSS</span>
+        <span class="svc-tag">Landing Pages</span>
+        <span class="svc-tag">Small Business</span>
+        <span class="svc-tag">Mobile-First</span>
+      </div>
+      <a href="services/web-development.html" class="svc-cat-link">Learn More</a>
+    </div>
+
+    <!-- 5 -->
+    <div class="svc-cat-card">
+      <div class="svc-cat-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/></svg>
+      </div>
+      <div class="svc-cat-title">Audio Transcription &amp; Reporting</div>
+      <p class="svc-cat-desc">Accurate English transcription of audio recordings - interviews, meetings, lectures - with delivery as formatted written reports, summaries, or structured documents ready for use.</p>
+      <div class="svc-cat-tags">
+        <span class="svc-tag">Transcription</span>
+        <span class="svc-tag">Reports</span>
+        <span class="svc-tag">Interviews</span>
+        <span class="svc-tag">English C1</span>
+      </div>
+      <a href="services/audio-transcription.html" class="svc-cat-link">Learn More</a>
+    </div>
+
+    <!-- 6 -->
+    <div class="svc-cat-card">
+      <div class="svc-cat-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 10h4M6 13h8"/></svg>
+      </div>
+      <div class="svc-cat-title">Video Subtitling &amp; Captioning</div>
+      <p class="svc-cat-desc">Accurate subtitles and closed captions for videos in 90+ languages. SRT and VTT files ready for YouTube, Vimeo social platforms - or burned directly into the video file.</p>
+      <div class="svc-cat-tags">
+        <span class="svc-tag">SRT / VTT</span>
+        <span class="svc-tag">90+ Languages</span>
+        <span class="svc-tag">Closed Captions</span>
+        <span class="svc-tag">Multilingual</span>
+      </div>
+      <a href="services/video-subtitling.html" class="svc-cat-link">Learn More</a>
+    </div>
+
   </div>
 </section>
 
@@ -1134,56 +651,20 @@
       <div class="section-label">Who We Are</div>
       <h2 class="section-title">Expert IT Care,<br/>Right Here in Graz</h2>
       <p class="section-desc">
-        PCAID is a registered IT services business offering deep technical expertise - with over 7 years repair experience, we go further than others dare.
+        PCAID is a WKO-registered IT services business covering hardware, data, web and document work. Over 7 years technical experience - we go further than others dare.
       </p>
       <ul class="about-list">
-        <li>Deep hardware expertise - from RAM and storage upgrades to full system diagnostics.</li>
-        <li>Custom scripting and automation — Python, PowerShell, and Bash solutions for individuals and businesses.</li>
-        <li>Transparent diagnostics — you know exactly what's wrong before we start.</li>
-        <li>Serving individuals, students, and small businesses across Graz.</li>
-        <li>Fast turnaround — most repairs completed same-day or within 24 hours.</li>
+        <li>Component-level hardware repair - from RAM upgrades to full board diagnostics.</li>
+        <li>Data cleaning and structuring for professionals, researchers and small businesses.</li>
+        <li>OCR and automation pipelines - turning scanned documents into searchable databases.</li>
+        <li>Custom website builds - clean, fast and built around your business goals.</li>
+        <li>Accurate English audio transcription with formatted reporting output.</li>
+        <li>Fast turnaround - most tasks completed same-day or within 24 hours.</li>
       </ul>
       <div class="wko-badge">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        <span>WKO Graz</span> — Officially registered IT service provider
+        <span>WKO Graz</span> - Officially registered IT service provider
       </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- GALLERY -->
-<section id="gallery">
-  <div class="reveal">
-    <div class="section-label">Our Work</div>
-    <h2 class="section-title">Done Deals</h2>
-    <p class="section-desc">Photos from real repair jobs available here.</p>
-  </div>
-  <div class="gallery-grid reveal" id="galleryGrid">
-    <div class="gallery-item tall" data-label="Computer Repair">
-      <img src="PICTURES/motherboard.jpg" alt="Computer Repair" loading="lazy"/>
-      <div class="gallery-overlay"><span>Computer Repair</span></div>
-    </div>
-    <div class="gallery-item" data-label="Screen Replacement">
-      <img loading="lazy" src="PICTURES/screen_replacement.jpg" alt="Screen Replacement"/>
-      <div class="gallery-overlay"><span>Screen Replacement</span></div>
-    </div>
-    <div class="gallery-item" data-label="Data Recovery">
-      <img loading="lazy" src="PICTURES/Data_recovery.jpg" alt="Data Recovery"/>
-      <div class="gallery-overlay"><span>Data Recovery</span></div>
-    </div>
-    <div class="gallery-item wide" data-label="Scripting & Automation">
-      <img loading="lazy" src="PICTURES/Scripting___Automation.jpg" alt="Scripting & Automation"/>
-      <div class="gallery-overlay"><span>Scripting & Automation</span></div>
-    </div>
-    <div class="gallery-item" data-label="Software & OS Setup">
-      <img loading="lazy" src="PICTURES/Software___OS_Setup.jpg" alt="Software & OS Setup"/>
-      <div class="gallery-overlay"><span>Software & OS Setup</span></div>
-    </div>
-    <div class="gallery-item" data-label="Battery Replacement">
-      <img loading="lazy" src="PICTURES/Battery_replacement.jpg" alt="Battery Replacement"/>
-      <div class="gallery-overlay"><span>Battery Replacement</span></div>
     </div>
   </div>
 </section>
@@ -1195,12 +676,12 @@
   <div class="reveal">
     <div class="section-label">Social Proof</div>
     <h2 class="section-title">What Clients Say</h2>
-    <p class="section-desc">Feedbacks from customers in Austria.</p>
+    <p class="section-desc">Feedback from customers across Austria.</p>
   </div>
   <div class="testimonials-grid reveal">
     <div class="testi-card">
       <div class="stars">★★★★★</div>
-      <p class="testi-text">My laptop wouldn't turn on at all — PCAID ran a full diagnostic, identified a complete motherboard cleanup, carried out the servicing and maintenance and had everthing back within 24hrs</p>
+      <p class="testi-text">My laptop wouldn't turn on at all - PCAID ran a full diagnostic, identified a complete motherboard cleanup, carried out the servicing and maintenance and had everything back within 24hrs</p>
       <div class="testi-author">
         <div class="testi-avatar">HA</div>
         <div>
@@ -1232,9 +713,6 @@
       </div>
     </div>
   </div>
-  <p class="reveal" style="font-size:0.78rem;color:var(--muted);margin-top:1.5rem;text-align:center;">
-    
-  </p>
 </section>
 
 <div class="divider"></div>
@@ -1244,9 +722,8 @@
   <div class="contact-inner">
     <div>
       <div class="section-label">Get In Touch</div>
-      <h2 class="section-title">Book a Repair<br/>or Ask Us Anything</h2>
+      <h2 class="section-title">Request a Service<br/>or Ask Us Anything</h2>
       <p class="section-desc" style="margin-bottom:3rem;">Based in Graz. Fast response. No jargon.</p>
-
       <div class="contact-detail">
         <div class="contact-icon">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -1256,7 +733,6 @@
           <div class="contact-detail-value">Jakominiplatz, Graz, Austria</div>
         </div>
       </div>
-
       <div class="contact-detail">
         <div class="contact-icon">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.03 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14v2.92z"/></svg>
@@ -1271,7 +747,6 @@
           </a>
         </div>
       </div>
-
       <div class="contact-detail">
         <div class="contact-icon">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -1283,9 +758,7 @@
       </div>
     </div>
 
-    <form class="contact-form" id="contactForm"
-      action="https://formspree.io/f/mlgvbrer"
-      method="POST">
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mlgvbrer" method="POST">
       <div class="form-row">
         <div class="form-group">
           <label for="fname">First Name</label>
@@ -1304,18 +777,39 @@
         <label for="service">Service Needed</label>
         <select id="service" name="service">
           <option value="">— Select a service —</option>
-          <option>Scripting &amp; Automation</option>
-          <option>PC / Laptop Diagnostics</option>
-          <option>Hardware Replacement</option>
-          <option>Data Recovery</option>
-          <option>IT Support &amp; Consulting</option>
-          <option>Software / OS Setup</option>
-          <option>Other</option>
+          <optgroup label="Device Repair &amp; Diagnostics">
+            <option>PC / Laptop Diagnostics</option>
+            <option>Hardware Replacement</option>
+            <option>Data Recovery</option>
+            <option>Software / OS Setup</option>
+          </optgroup>
+          <optgroup label="Data Services">
+            <option>Data Cleaning &amp; Structuring</option>
+            <option>Spreadsheet Formatting</option>
+          </optgroup>
+          <optgroup label="Document Digitisation &amp; Automation">
+            <option>OCR / Scan to Database</option>
+            <option>Document Automation</option>
+          </optgroup>
+          <optgroup label="Web Development">
+            <option>Website Build</option>
+            <option>Landing Page</option>
+          </optgroup>
+          <optgroup label="Audio Transcription &amp; Reporting">
+            <option>Audio Transcription</option>
+            <option>Meeting / Interview Report</option>
+          </optgroup>
+          <optgroup label="Video Subtitling &amp; Captioning">
+            <option>Video Subtitles (SRT / VTT)</option>
+            <option>Burned-In Subtitles</option>
+            <option>Multilingual Subtitles</option>
+          </optgroup>
+          <option>Other / Not Sure</option>
         </select>
       </div>
       <div class="form-group">
-        <label for="message">Describe the Issue</label>
-        <textarea id="message" name="message" placeholder="Tell us what's happening with your device..."></textarea>
+        <label for="message">Describe Your Need</label>
+        <textarea id="message" name="message" placeholder="Tell us what you need..."></textarea>
       </div>
       <button type="submit" class="form-submit" id="formSubmitBtn">Send Message →</button>
       <p id="formStatus" style="display:none;margin-top:1rem;font-size:0.9rem;text-align:center;border-radius:8px;padding:0.75rem 1rem;"></p>
@@ -1330,19 +824,13 @@
     <span>PCAID</span>
   </a>
   <p class="footer-copy">© 2025 PCAID · Dienstleistungen in der automatischen Datenverarbeitung und Informationstechnik · WKO Graz<br/>
-  <span class="seo-keywords">PC Reparatur Graz · Laptop Reparatur Graz · Datenrettung Graz · IT Support Graz · Datenverlust Graz</span></p>
+  <span class="seo-keywords">PC Reparatur Graz · Laptop Reparatur Graz · Datenrettung Graz · IT Support Graz · Webentwicklung Graz</span></p>
   <ul class="footer-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#about-section">About</a></li>
     <li><a href="#contact-section">Contact</a></li>
   </ul>
 </footer>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose">✕</button>
-  <img class="lightbox-img" id="lightboxImg" src="" alt=""/>
-</div>
 
 <script>
   // Hamburger menu
@@ -1352,34 +840,34 @@
     navLinks.classList.toggle('open');
     hamburger.classList.toggle('active');
   });
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  navLinks.querySelectorAll('a:not(#servicesToggle)').forEach(a => a.addEventListener('click', () => {
     navLinks.classList.remove('open');
     hamburger.classList.remove('active');
   }));
 
+  // Services dropdown - click to open, click outside to close
+  const navDrop = document.getElementById('navServicesDrop');
+  const servicesToggle = document.getElementById('servicesToggle');
+  servicesToggle.addEventListener('click', e => {
+    e.preventDefault();
+    navDrop.classList.toggle('open');
+  });
+  document.addEventListener('click', e => {
+    if (!navDrop.contains(e.target)) navDrop.classList.remove('open');
+  });
+  // Close dropdown when a dropdown link is clicked
+  navDrop.querySelectorAll('.dropdown-menu a').forEach(a => {
+    a.addEventListener('click', () => navDrop.classList.remove('open'));
+  });
+
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-  }, { threshold: 0.12 });
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
   reveals.forEach(r => observer.observe(r));
 
-  // Gallery lightbox
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightboxImg');
-  document.querySelectorAll('.gallery-item').forEach(item => {
-    item.addEventListener('click', () => {
-      const img = item.querySelector('img');
-      if (img) {
-        lightboxImg.src = img.src;
-        lightbox.classList.add('open');
-      }
-    });
-  });
-  document.getElementById('lightboxClose').addEventListener('click', () => lightbox.classList.remove('open'));
-  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('open'); });
-
-  // Active nav link on scroll
+  // Active nav on scroll
   const sections = document.querySelectorAll('section[id], div[id]');
   window.addEventListener('scroll', () => {
     let current = '';
@@ -1387,15 +875,6 @@
     navLinks.querySelectorAll('a').forEach(a => {
       a.style.color = a.getAttribute('href') === '#' + current ? 'var(--lime)' : '';
     });
-  });
-
-  // Form feedback
-  const form = document.getElementById('contactForm');
-  form.addEventListener('submit', function(e) {
-    if (form.action.includes('YOUR_FORM_ID')) {
-      e.preventDefault();
-      alert('⚠️ To activate the form: create a free account at formspree.io, get your form ID, and replace YOUR_FORM_ID in the HTML.');
-    }
   });
 </script>
 </body>
