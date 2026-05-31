@@ -56,7 +56,6 @@
 <style>
   :root {
     --lime: #AAFF2A;
-    --lime-dim: #7DC41A;
     --black: #080808;
     --dark: #111111;
     --card: #161616;
@@ -75,25 +74,17 @@
     line-height: 1.6;
     overflow-x: hidden;
   }
-
   body::before {
     content: '';
-    position: fixed;
-    inset: 0;
+    position: fixed; inset: 0;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.4;
+    pointer-events: none; z-index: 0; opacity: 0.4;
   }
 
   /* ── NAV ── */
   nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
     padding: 1rem 2.5rem;
     background: rgba(8,8,8,0.85);
     backdrop-filter: blur(12px);
@@ -103,22 +94,11 @@
   .nav-logo img { height: 56px; width: auto; display: block; mix-blend-mode: screen; }
   .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
   .nav-links a {
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    transition: color 0.2s;
+    color: var(--muted); text-decoration: none; font-size: 0.85rem;
+    font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--lime); }
-  .nav-cta {
-    background: var(--lime);
-    color: var(--black) !important;
-    padding: 0.5rem 1.2rem;
-    border-radius: 4px;
-    font-weight: 700 !important;
-  }
+  .nav-cta { background: var(--lime); color: var(--black) !important; padding: 0.5rem 1.2rem; border-radius: 4px; font-weight: 700 !important; }
   .nav-cta:hover { background: #c8ff4d !important; color: var(--black) !important; }
 
   /* Services dropdown */
@@ -127,48 +107,35 @@
   .nav-dropdown > a::after { content: '▾'; font-size: 0.7rem; transition: transform 0.2s; }
   .nav-dropdown.open > a::after { transform: rotate(180deg); }
   .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: calc(100% + 0.75rem);
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(17,17,17,0.98);
-    border: 1px solid var(--border);
-    backdrop-filter: blur(16px);
-    min-width: 280px;
-    padding: 0.5rem 0;
-    border-radius: 4px;
-    list-style: none;
-    z-index: 200;
+    display: none; position: absolute; top: calc(100% + 0.75rem);
+    left: 50%; transform: translateX(-50%);
+    background: rgba(17,17,17,0.98); border: 1px solid var(--border);
+    backdrop-filter: blur(16px); min-width: 280px;
+    padding: 0.5rem 0; border-radius: 4px; list-style: none; z-index: 200;
   }
   .nav-dropdown.open .dropdown-menu { display: block; }
   .dropdown-menu li a {
-    display: block;
-    padding: 0.75rem 1.2rem;
-    font-size: 0.85rem;
-    color: var(--muted);
-    text-transform: none;
-    letter-spacing: 0.03em;
+    display: block; padding: 0.75rem 1.2rem; font-size: 0.85rem;
+    color: var(--muted); text-transform: none; letter-spacing: 0.03em;
     border-left: 2px solid transparent;
     transition: color 0.2s, border-color 0.2s, background 0.2s;
-    text-decoration: none;
-    font-weight: 500;
+    text-decoration: none; font-weight: 500;
   }
   .dropdown-menu li a:hover { color: var(--lime); border-left-color: var(--lime); background: rgba(170,255,42,0.04); }
 
-  .hamburger {
-    display: none; flex-direction: column; gap: 5px;
-    cursor: pointer; background: none; border: none; padding: 4px;
-  }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
   .hamburger span { display: block; width: 24px; height: 2px; background: var(--lime); transition: all 0.3s; }
 
   /* ── HERO ── */
   #hero {
     position: relative;
-    min-height: min(150vh, 900px);
-    display: flex;
+    min-height: 100svh;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 1fr;
     align-items: center;
-    padding: 6rem 2.5rem 4rem;
+    gap: 2rem;
+    padding: 7rem 2.5rem 3rem;
     overflow: hidden;
   }
   .hero-grid-bg {
@@ -179,133 +146,154 @@
     background-size: 60px 60px;
   }
   .hero-glow {
-    position: absolute;
-    width: 900px; height: 900px;
-    background: radial-gradient(circle, rgba(170,255,42,0.12) 0%, transparent 70%);
-    top: -100px; right: -100px;
+    position: absolute; width: 900px; height: 900px;
+    background: radial-gradient(circle, rgba(170,255,42,0.10) 0%, transparent 65%);
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
     pointer-events: none;
   }
-  .hero-content { position: relative; max-width: 750px; z-index: 1; }
+
+  /* Centre column — headline */
+  .hero-center {
+    position: relative; z-index: 1;
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center; gap: 1.5rem;
+  }
   .hero-badge {
     display: inline-flex; align-items: center; gap: 0.5rem;
     background: rgba(170,255,42,0.1); border: 1px solid rgba(170,255,42,0.3);
-    color: var(--lime); font-size: 0.75rem; font-weight: 600;
+    color: var(--lime); font-size: 0.7rem; font-weight: 600;
     letter-spacing: 0.12em; text-transform: uppercase;
-    padding: 0.35rem 0.9rem; border-radius: 100px; margin-bottom: 1.8rem;
-    animation: fadeUp 0.6s ease both;
+    padding: 0.35rem 0.9rem; border-radius: 100px;
+    animation: fadeUp 0.5s ease both;
   }
   .hero-badge::before {
     content: ''; width: 6px; height: 6px; border-radius: 50%;
     background: var(--lime); animation: pulse 2s infinite;
   }
-  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+  @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
   h1 {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(5rem, 13vw, 10.5rem);
-    line-height: 0.95; letter-spacing: 0.02em; color: var(--white);
-    animation: fadeUp 0.6s 0.1s ease both;
+    font-size: clamp(4.5rem, 10vw, 9rem);
+    line-height: 0.93; letter-spacing: 0.02em; color: var(--white);
+    animation: fadeUp 0.5s 0.1s ease both;
   }
   h1 .accent { color: var(--lime); }
-  .hero-sub {
-    margin-top: 1.5rem; font-size: 1.1rem; color: var(--muted);
-    max-width: 520px; line-height: 1.7; animation: fadeUp 0.6s 0.2s ease both;
-  }
-  .hero-sub strong { color: var(--white); }
   .hero-actions {
-    margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap;
-    animation: fadeUp 0.6s 0.3s ease both;
+    display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;
+    animation: fadeUp 0.5s 0.2s ease both;
   }
   .btn-primary {
     background: var(--lime); color: var(--black);
-    padding: 0.85rem 2rem; border-radius: 4px; font-weight: 700;
-    font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase;
-    text-decoration: none; transition: background 0.2s, transform 0.15s;
+    padding: 0.85rem 1.8rem; border-radius: 4px; font-weight: 700;
+    font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase;
+    text-decoration: none; transition: background 0.2s, transform 0.15s; display: inline-block;
   }
   .btn-primary:hover { background: #c8ff4d; transform: translateY(-2px); }
   .btn-outline {
     border: 1px solid var(--border); color: var(--white);
-    padding: 0.85rem 2rem; border-radius: 4px; font-weight: 500;
-    font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase;
-    text-decoration: none; transition: border-color 0.2s, color 0.2s, transform 0.15s;
+    padding: 0.85rem 1.8rem; border-radius: 4px; font-weight: 500;
+    font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase;
+    text-decoration: none; transition: border-color 0.2s, color 0.2s, transform 0.15s; display: inline-block;
   }
   .btn-outline:hover { border-color: var(--lime); color: var(--lime); transform: translateY(-2px); }
   .hero-stats {
-    margin-top: 4rem; display: flex; gap: 3rem; flex-wrap: wrap;
-    animation: fadeUp 0.6s 0.4s ease both;
+    display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;
+    animation: fadeUp 0.5s 0.3s ease both;
   }
-  .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--lime); line-height: 1; }
-  .stat-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.2rem; }
+  .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: var(--lime); line-height: 1; }
+  .stat-label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.2rem; }
 
-  .seo-keywords { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
-
-  /* ── SECTIONS ── */
-  section {
+  /* Side columns — service card stacks */
+  .hero-cards-left,
+  .hero-cards-right {
     position: relative; z-index: 1;
-    padding: 6rem 2.5rem; max-width: 1200px; margin: 0 auto;
+    display: flex; flex-direction: column; gap: 0.75rem;
+    animation: fadeUp 0.5s 0.15s ease both;
   }
-  .section-label {
-    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
-    text-transform: uppercase; color: var(--lime); margin-bottom: 0.8rem;
-  }
-  .section-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    line-height: 1; letter-spacing: 0.02em; color: var(--white); margin-bottom: 1rem;
-  }
-  .section-desc { color: var(--muted); max-width: 540px; font-size: 1rem; line-height: 1.7; margin-bottom: 3.5rem; }
-  .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); max-width: 100%; margin: 0 2.5rem; }
+  .hero-cards-right { animation-delay: 0.2s; }
 
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-
-  /* ── SERVICE CATEGORIES GRID ── */
-  .services-cat-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 1px;
-    background: var(--border);
+  /* Individual hero service card */
+  .h-card {
+    display: block;
+    background: rgba(22,22,22,0.85);
     border: 1px solid var(--border);
-  }
-  .svc-cat-card {
-    background: var(--card);
-    padding: 2.5rem 2rem;
+    border-radius: 6px;
+    padding: 1.1rem 1.3rem;
+    text-decoration: none;
+    color: inherit;
     position: relative;
     overflow: hidden;
-    transition: background 0.25s;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+    transition:
+      transform 0.25s ease,
+      border-color 0.25s ease,
+      background 0.25s ease,
+      box-shadow 0.25s ease;
+    cursor: pointer;
   }
-  .svc-cat-card::after {
-    content: ''; position: absolute; bottom: 0; left: 0;
-    height: 2px; width: 0; background: var(--lime); transition: width 0.35s ease;
+  .h-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(170,255,42,0.08) 0%, transparent 70%);
+    opacity: 0; transition: opacity 0.3s ease;
+    pointer-events: none;
   }
-  .svc-cat-card:hover { background: #1a1a1a; }
-  .svc-cat-card:hover::after { width: 100%; }
-  .svc-cat-icon {
-    width: 44px; height: 44px;
-    border: 1px solid rgba(170,255,42,0.3); border-radius: 8px;
+  .h-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0;
+    height: 2px; width: 0;
+    background: var(--lime);
+    transition: width 0.3s ease;
+  }
+  .h-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(170,255,42,0.5);
+    background: rgba(26,26,26,0.95);
+    box-shadow: 0 8px 32px rgba(170,255,42,0.10), 0 2px 8px rgba(0,0,0,0.4);
+  }
+  .h-card:hover::before { opacity: 1; }
+  .h-card:hover::after { width: 100%; }
+  .h-card:hover .h-card-title { color: var(--lime); }
+  .h-card:hover .h-card-arrow { transform: translateX(4px); }
+
+  .h-card-icon {
+    width: 32px; height: 32px;
+    border: 1px solid rgba(170,255,42,0.25); border-radius: 6px;
     display: flex; align-items: center; justify-content: center;
-    margin-bottom: 1.5rem; color: var(--lime);
+    color: var(--lime); margin-bottom: 0.65rem;
+    transition: border-color 0.25s, background 0.25s;
   }
-  .svc-cat-title {
+  .h-card:hover .h-card-icon { border-color: rgba(170,255,42,0.6); background: rgba(170,255,42,0.08); }
+  .h-card-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.4rem; letter-spacing: 0.05em; color: var(--white); margin-bottom: 0.6rem;
+    font-size: 1.15rem; letter-spacing: 0.06em;
+    color: var(--white); margin-bottom: 0.3rem;
+    transition: color 0.25s;
+    line-height: 1.1;
   }
-  .svc-cat-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.65; margin-bottom: 1.5rem; flex-grow: 1; }
-  .svc-cat-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
-  .svc-tag {
-    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--lime); background: rgba(170,255,42,0.08);
-    border: 1px solid rgba(170,255,42,0.2); padding: 0.2rem 0.55rem; border-radius: 3px;
+  .h-card-desc { font-size: 0.75rem; color: var(--muted); line-height: 1.5; }
+  .h-card-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 0.65rem;
   }
-  .svc-cat-link {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--lime); text-decoration: none; transition: gap 0.2s;
-    margin-top: auto;
+  .h-card-tags { display: flex; gap: 0.3rem; flex-wrap: wrap; }
+  .h-card-tag {
+    font-size: 0.6rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+    color: var(--lime); background: rgba(170,255,42,0.07);
+    border: 1px solid rgba(170,255,42,0.18); padding: 0.15rem 0.4rem; border-radius: 2px;
   }
-  .svc-cat-link:hover { gap: 0.7rem; }
-  .svc-cat-link::after { content: '→'; }
+  .h-card-arrow {
+    color: var(--lime); font-size: 0.85rem; flex-shrink: 0;
+    transition: transform 0.25s; margin-left: 0.5rem;
+  }
+
+  /* ── GENERAL SECTIONS ── */
+  .seo-keywords { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+  section { position: relative; z-index: 1; padding: 6rem 2.5rem; max-width: 1200px; margin: 0 auto; }
+  .section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--lime); margin-bottom: 0.8rem; }
+  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1; letter-spacing: 0.02em; color: var(--white); margin-bottom: 1rem; }
+  .section-desc { color: var(--muted); max-width: 540px; font-size: 1rem; line-height: 1.7; margin-bottom: 3.5rem; }
+  .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); max-width: 100%; margin: 0 2.5rem; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
   /* ── ABOUT ── */
   #about { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
@@ -336,7 +324,6 @@
   }
   .wko-badge span { color: var(--lime); font-weight: 600; }
 
-  /* ── GALLERY ── */
   /* ── TESTIMONIALS ── */
   #testimonials { background: none; }
   .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
@@ -407,11 +394,27 @@
   .footer-links a { font-size: 0.75rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
   .footer-links a:hover { color: var(--lime); }
 
-  /* ── SCROLL REVEAL ── */
+  /* ── REVEAL ── */
   .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
   /* ── MOBILE ── */
+  @media (max-width: 900px) {
+    #hero {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      padding: 5.5rem 1.25rem 2.5rem;
+      gap: 0;
+      min-height: unset;
+    }
+    .hero-center { order: 1; text-align: left; align-items: flex-start; padding-bottom: 2rem; }
+    .hero-cards-left { order: 2; }
+    .hero-cards-right { order: 3; }
+    .hero-cards-left, .hero-cards-right { animation-delay: 0s; }
+    h1 { font-size: clamp(3.8rem, 16vw, 6rem); }
+    .hero-stats { justify-content: flex-start; gap: 1.5rem; }
+    .hero-actions { justify-content: flex-start; }
+  }
   @media (max-width: 768px) {
     nav { padding: 0.875rem 1.25rem; }
     .nav-links {
@@ -432,18 +435,9 @@
     .dropdown-menu { position: static; transform: none; background: rgba(22,22,22,0.98); border: none; border-left: 2px solid var(--border); margin-left: 1rem; padding: 0.25rem 0; display: none; }
     .nav-dropdown.open .dropdown-menu { display: block; }
     .nav-dropdown > a::after { display: none; }
-    #hero { min-height: 100svh; padding: 5.5rem 1.25rem 3rem; align-items: flex-start; }
-    .hero-glow { width: 320px; height: 320px; top: -60px; right: -60px; }
-    h1 { font-size: clamp(3.8rem, 18vw, 6rem); }
-    .hero-sub { font-size: 0.95rem; max-width: 100%; }
-    .hero-actions { flex-direction: column; gap: 0.75rem; }
-    .btn-primary, .btn-outline { width: 100%; text-align: center; padding: 1rem 1.5rem; font-size: 0.95rem; }
-    .hero-stats { gap: 1.5rem; margin-top: 2.5rem; flex-wrap: nowrap; }
-    .stat-num { font-size: 2rem; }
-    section { padding: 3.5rem 1.25rem; }
-    .services-cat-grid { grid-template-columns: 1fr; }
     #about { grid-template-columns: 1fr; gap: 2.5rem; }
     .testimonials-grid { grid-template-columns: 1fr; }
+    section { padding: 3.5rem 1.25rem; }
     #contact-section { padding: 3.5rem 1.25rem; }
     .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
     .form-row { grid-template-columns: 1fr; }
@@ -452,12 +446,9 @@
     .contact-icon { width: 36px; height: 36px; flex-shrink: 0; }
     footer { flex-direction: column; align-items: center; text-align: center; padding: 1.75rem 1.25rem; gap: 1.25rem; }
     .footer-links { gap: 1.25rem; flex-wrap: wrap; justify-content: center; }
-
   }
   @media (max-width: 390px) {
     h1 { font-size: clamp(3.2rem, 20vw, 4.5rem); }
-    .hero-stats { gap: 1rem; }
-    .stat-num { font-size: 1.75rem; }
     section { padding: 3rem 1rem; }
     #contact-section { padding: 3rem 1rem; }
     nav { padding: 0.75rem 1rem; }
@@ -473,7 +464,7 @@
   </a>
   <ul class="nav-links" id="navLinks">
     <li class="nav-dropdown" id="navServicesDrop">
-      <a href="#services" id="servicesToggle">Services</a>
+      <a href="#hero" id="servicesToggle">Services</a>
       <ul class="dropdown-menu">
         <li><a href="services/device-repair.html">Device Repair &amp; Diagnostics</a></li>
         <li><a href="services/data-services.html">Data Services</a></li>
@@ -492,146 +483,133 @@
   </button>
 </nav>
 
-<!-- HERO -->
+<!-- HERO — headline centre, service cards flanking left and right -->
 <section id="hero">
   <div class="hero-grid-bg"></div>
   <div class="hero-glow"></div>
-  <div class="hero-content">
+
+  <!-- LEFT CARDS: Device Repair, Data Services, Document Digitisation -->
+  <div class="hero-cards-left">
+
+    <a class="h-card" href="services/device-repair.html">
+      <div class="h-card-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <div class="h-card-title">Device Repair &amp; Diagnostics</div>
+      <div class="h-card-desc">Laptops, PCs — board-level diagnostics, screen, battery, data recovery, OS setup.</div>
+      <div class="h-card-footer">
+        <div class="h-card-tags">
+          <span class="h-card-tag">Hardware</span>
+          <span class="h-card-tag">Recovery</span>
+        </div>
+        <span class="h-card-arrow">→</span>
+      </div>
+    </a>
+
+    <a class="h-card" href="services/data-services.html">
+      <div class="h-card-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+      </div>
+      <div class="h-card-title">Data Services</div>
+      <div class="h-card-desc">Messy spreadsheets cleaned, structured, and script-automated for reuse.</div>
+      <div class="h-card-footer">
+        <div class="h-card-tags">
+          <span class="h-card-tag">Excel</span>
+          <span class="h-card-tag">Scripts</span>
+        </div>
+        <span class="h-card-arrow">→</span>
+      </div>
+    </a>
+
+    <a class="h-card" href="services/document-digitisation.html">
+      <div class="h-card-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
+      <div class="h-card-title">Document Digitisation &amp; Automation</div>
+      <div class="h-card-desc">OCR, PDF extraction, scan-to-database pipelines — automated with Python.</div>
+      <div class="h-card-footer">
+        <div class="h-card-tags">
+          <span class="h-card-tag">OCR</span>
+          <span class="h-card-tag">Automation</span>
+        </div>
+        <span class="h-card-arrow">→</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- CENTRE: headline + CTA + stats -->
+  <div class="hero-center">
     <div class="hero-badge">Graz · IT Services · WKO Registered</div>
     <h1>PCAID.<br/><span class="accent">WE BUILD.<br/>WE FIX.</span></h1>
-    <p class="hero-sub">
-      From broken hardware to buried paperwork...<br/>
-      <strong>We handle it.</strong>
-    </p>
     <div class="hero-actions">
       <a href="#contact-section" class="btn-primary">Get a Quote</a>
-      <a href="#services" class="btn-outline">Our Services</a>
+      <a href="#about-section" class="btn-outline">About Us</a>
     </div>
     <div class="hero-stats">
       <div class="stat-item">
         <div class="stat-num">7+</div>
-        <div class="stat-label">Years Experience</div>
+        <div class="stat-label">Years Exp.</div>
       </div>
       <div class="stat-item">
         <div class="stat-num">6</div>
-        <div class="stat-label">Service Areas</div>
+        <div class="stat-label">Services</div>
       </div>
       <div class="stat-item">
         <div class="stat-num">WKO</div>
-        <div class="stat-label">Registered Business</div>
+        <div class="stat-label">Registered</div>
       </div>
     </div>
+    <span class="seo-keywords">PC Reparatur Graz · Laptop Reparatur Graz · Datenrettung Graz · IT Support Graz · Webentwicklung Graz</span>
   </div>
-</section>
 
-<div class="divider"></div>
+  <!-- RIGHT CARDS: Web Dev, Transcription, Video Subtitling -->
+  <div class="hero-cards-right">
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="reveal">
-    <div class="section-label">What We Do</div>
-    <h2 class="section-title">Our Services</h2>
-    <p class="section-desc">From board-level hardware diagnostics to custom web builds, structured data work and document automation - PCAID covers the full spectrum of IT services for individuals and businesses.</p>
-  </div>
-  <div class="services-cat-grid reveal">
+    <a class="h-card" href="services/web-development.html">
+      <div class="h-card-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      </div>
+      <div class="h-card-title">Web Development</div>
+      <div class="h-card-desc">Custom sites and landing pages — fast, mobile-first, built to convert.</div>
+      <div class="h-card-footer">
+        <div class="h-card-tags">
+          <span class="h-card-tag">HTML/CSS</span>
+          <span class="h-card-tag">Mobile</span>
+        </div>
+        <span class="h-card-arrow">→</span>
+      </div>
+    </a>
 
-    <!-- 1 -->
-    <div class="svc-cat-card">
-      <div class="svc-cat-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+    <a class="h-card" href="services/audio-transcription.html">
+      <div class="h-card-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/></svg>
       </div>
-      <div class="svc-cat-title">Device Repair &amp; Diagnostics</div>
-      <p class="svc-cat-desc">Full hardware diagnostics and component-level repair for laptops and PCs. Screen replacements, battery swaps, charging ports, RAM/SSD upgrades, data recovery and OS setup.</p>
-      <div class="svc-cat-tags">
-        <span class="svc-tag">Laptops</span>
-        <span class="svc-tag">Motherboard</span>
-        <span class="svc-tag">Data Recovery</span>
-        <span class="svc-tag">OS Setup</span>
+      <div class="h-card-title">Audio Transcription &amp; Reporting</div>
+      <div class="h-card-desc">Interviews, meetings, lectures — transcribed and formatted into reports.</div>
+      <div class="h-card-footer">
+        <div class="h-card-tags">
+          <span class="h-card-tag">English C1</span>
+          <span class="h-card-tag">Reports</span>
+        </div>
+        <span class="h-card-arrow">→</span>
       </div>
-      <a href="services/device-repair.html" class="svc-cat-link">Learn More</a>
-    </div>
+    </a>
 
-    <!-- 2 -->
-    <div class="svc-cat-card">
-      <div class="svc-cat-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+    <a class="h-card" href="services/video-subtitling.html">
+      <div class="h-card-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 10h4M6 13h8"/></svg>
       </div>
-      <div class="svc-cat-title">Data Services</div>
-      <p class="svc-cat-desc">Professional data cleaning, structuring, formatting analysis. Raw, messy spreadsheets turned into clean, usable datasets - with optional scripting to automate recurring tasks.</p>
-      <div class="svc-cat-tags">
-        <span class="svc-tag">Data Cleaning</span>
-        <span class="svc-tag">Excel</span>
-        <span class="svc-tag">CSV</span>
-        <span class="svc-tag">Structuring</span>
-        <span class="svc-tag">Scripts</span>
+      <div class="h-card-title">Video Subtitling &amp; Captioning</div>
+      <div class="h-card-desc">SRT/VTT subtitles in 90+ languages — for YouTube, social, or burned-in.</div>
+      <div class="h-card-footer">
+        <div class="h-card-tags">
+          <span class="h-card-tag">SRT/VTT</span>
+          <span class="h-card-tag">Multilingual</span>
+        </div>
+        <span class="h-card-arrow">→</span>
       </div>
-      <a href="services/data-services.html" class="svc-cat-link">Learn More</a>
-    </div>
-
-    <!-- 3 -->
-    <div class="svc-cat-card">
-      <div class="svc-cat-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-      </div>
-      <div class="svc-cat-title">Document Digitisation &amp; Automation</div>
-      <p class="svc-cat-desc">OCR extraction from scanned forms and PDFs into structured databases. Python scripting and automation pipelines - turning paper-based and manual processes into searchable, repeatable digital workflows.</p>
-      <div class="svc-cat-tags">
-        <span class="svc-tag">OCR</span>
-        <span class="svc-tag">PDF Extraction</span>
-        <span class="svc-tag">Database</span>
-        <span class="svc-tag">Scripting</span>
-        <span class="svc-tag">Automation</span>
-      </div>
-      <a href="services/document-digitisation.html" class="svc-cat-link">Learn More</a>
-    </div>
-
-    <!-- 4 -->
-    <div class="svc-cat-card">
-      <div class="svc-cat-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-      </div>
-      <div class="svc-cat-title">Web Development</div>
-      <p class="svc-cat-desc">Custom websites and landing pages for small businesses, freelancers and professionals. Clean, fast, mobile-friendly builds - from single-page sites to multi-section business presences.</p>
-      <div class="svc-cat-tags">
-        <span class="svc-tag">HTML/CSS</span>
-        <span class="svc-tag">Landing Pages</span>
-        <span class="svc-tag">Small Business</span>
-        <span class="svc-tag">Mobile-First</span>
-      </div>
-      <a href="services/web-development.html" class="svc-cat-link">Learn More</a>
-    </div>
-
-    <!-- 5 -->
-    <div class="svc-cat-card">
-      <div class="svc-cat-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/></svg>
-      </div>
-      <div class="svc-cat-title">Audio Transcription &amp; Reporting</div>
-      <p class="svc-cat-desc">Accurate English transcription of audio recordings - interviews, meetings, lectures - with delivery as formatted written reports, summaries, or structured documents ready for use.</p>
-      <div class="svc-cat-tags">
-        <span class="svc-tag">Transcription</span>
-        <span class="svc-tag">Reports</span>
-        <span class="svc-tag">Interviews</span>
-        <span class="svc-tag">English C1</span>
-      </div>
-      <a href="services/audio-transcription.html" class="svc-cat-link">Learn More</a>
-    </div>
-
-    <!-- 6 -->
-    <div class="svc-cat-card">
-      <div class="svc-cat-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 10h4M6 13h8"/></svg>
-      </div>
-      <div class="svc-cat-title">Video Subtitling &amp; Captioning</div>
-      <p class="svc-cat-desc">Accurate subtitles and closed captions for videos in 90+ languages. SRT and VTT files ready for YouTube, Vimeo social platforms - or burned directly into the video file.</p>
-      <div class="svc-cat-tags">
-        <span class="svc-tag">SRT / VTT</span>
-        <span class="svc-tag">90+ Languages</span>
-        <span class="svc-tag">Closed Captions</span>
-        <span class="svc-tag">Multilingual</span>
-      </div>
-      <a href="services/video-subtitling.html" class="svc-cat-link">Learn More</a>
-    </div>
+    </a>
 
   </div>
 </section>
@@ -651,19 +629,19 @@
       <div class="section-label">Who We Are</div>
       <h2 class="section-title">Expert IT Care,<br/>Right Here in Graz</h2>
       <p class="section-desc">
-        PCAID is a WKO-registered IT services business covering hardware, data, web and document work. Over 7 years technical experience - we go further than others dare.
+        PCAID is a WKO-registered IT services business covering hardware, data, web and document work. Over 7 years technical experience — we go further than others dare.
       </p>
       <ul class="about-list">
-        <li>Component-level hardware repair - from RAM upgrades to full board diagnostics.</li>
+        <li>Component-level hardware repair — from RAM upgrades to full board diagnostics.</li>
         <li>Data cleaning and structuring for professionals, researchers and small businesses.</li>
-        <li>OCR and automation pipelines - turning scanned documents into searchable databases.</li>
-        <li>Custom website builds - clean, fast and built around your business goals.</li>
+        <li>OCR and automation pipelines — turning scanned documents into searchable databases.</li>
+        <li>Custom website builds — clean, fast and built around your business goals.</li>
         <li>Accurate English audio transcription with formatted reporting output.</li>
-        <li>Fast turnaround - most tasks completed same-day or within 24 hours.</li>
+        <li>Fast turnaround — most tasks completed same-day or within 24 hours.</li>
       </ul>
       <div class="wko-badge">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        <span>WKO Graz</span> - Officially registered IT service provider
+        <span>WKO Graz</span> — Officially registered IT service provider
       </div>
     </div>
   </div>
@@ -681,7 +659,7 @@
   <div class="testimonials-grid reveal">
     <div class="testi-card">
       <div class="stars">★★★★★</div>
-      <p class="testi-text">My laptop wouldn't turn on at all - PCAID ran a full diagnostic, identified a complete motherboard cleanup, carried out the servicing and maintenance and had everything back within 24hrs</p>
+      <p class="testi-text">My laptop wouldn't turn on at all — PCAID ran a full diagnostic, identified a complete motherboard cleanup, carried out the servicing and maintenance and had everything back within 24hrs</p>
       <div class="testi-author">
         <div class="testi-avatar">HA</div>
         <div>
@@ -826,14 +804,14 @@
   <p class="footer-copy">© 2025 PCAID · Dienstleistungen in der automatischen Datenverarbeitung und Informationstechnik · WKO Graz<br/>
   <span class="seo-keywords">PC Reparatur Graz · Laptop Reparatur Graz · Datenrettung Graz · IT Support Graz · Webentwicklung Graz</span></p>
   <ul class="footer-links">
-    <li><a href="#services">Services</a></li>
+    <li><a href="#hero">Services</a></li>
     <li><a href="#about-section">About</a></li>
     <li><a href="#contact-section">Contact</a></li>
   </ul>
 </footer>
 
 <script>
-  // Hamburger menu
+  // Hamburger
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('navLinks');
   hamburger.addEventListener('click', () => {
@@ -845,7 +823,7 @@
     hamburger.classList.remove('active');
   }));
 
-  // Services dropdown - click to open, click outside to close
+  // Services dropdown — click to open, click outside to close
   const navDrop = document.getElementById('navServicesDrop');
   const servicesToggle = document.getElementById('servicesToggle');
   servicesToggle.addEventListener('click', e => {
@@ -855,7 +833,6 @@
   document.addEventListener('click', e => {
     if (!navDrop.contains(e.target)) navDrop.classList.remove('open');
   });
-  // Close dropdown when a dropdown link is clicked
   navDrop.querySelectorAll('.dropdown-menu a').forEach(a => {
     a.addEventListener('click', () => navDrop.classList.remove('open'));
   });
@@ -867,7 +844,7 @@
   }, { threshold: 0.08 });
   reveals.forEach(r => observer.observe(r));
 
-  // Active nav on scroll
+  // Active nav highlight on scroll
   const sections = document.querySelectorAll('section[id], div[id]');
   window.addEventListener('scroll', () => {
     let current = '';
